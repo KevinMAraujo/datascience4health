@@ -72,7 +72,7 @@ Este estudo será conduzido com base no modelo de processo *Knowledge Discovery 
 
 # Cronograma
 
-| Atividades | 1ª Semana 05/04 | 2ª Semana 11/04 | 3ª Semana 18/04 | 4ª Semana 25/04 | 5ª Semana 02/05 | 6ª Semana 09/05 | 7ª Semana 16/05 | 8ª Semana 8 23/05 |
+| Atividades | 1ª Semana 05/04 | 2ª Semana 11/04 | 3ª Semana 18/04 | 4ª Semana 25/04 | 5ª Semana 02/05 | 6ª Semana 09/05 | 7ª Semana 16/05 | 8ª Semana  23/05 |
 |--|--|--|--|--|--|--|--|--|
 Definição do Projeto            |X|X| | | | | | |
 Analise da Base de Dados        | |X|X| | | | | | 
