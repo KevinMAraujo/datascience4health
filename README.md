@@ -1,6 +1,6 @@
-# Impacto da pandemia de Covid-19 sobre o tratamento do câncer de mama no SUS
+# Projeto Impacto da pandemia de Covid-19 sobre o tratamento do câncer de mama no SUS
 
-# Impact of the Covid-19 pandemic on the treatment of breast cancer in SUS
+# Project Impact of the Covid-19 pandemic on the treatment of breast cancer in SUS
 
 # Apresentação
 
@@ -33,7 +33,6 @@ Para o desenvolvimento do projeto foram utilizadas a base de dados fornecido pel
 | SIASUS | [*DATASUS/SIASUS*](http://www2.datasus.gov.br/DATASUS/index.php?area=0901&item=1&acao=22&pad=31655) | Arquivos com informações referente aos atendimentos ambulatoriais. |
 | SIH/SUS | [*DATASUS/SIHSUS*](http://www2.datasus.gov.br/DATASUS/index.php?area=0202&id=11633) | Arquivos com informações de cirurgias. |
 |COVID-19 | [*CoronavírusBrasil*](https://covid.saude.gov.br/) | Site com painel interativo com dados da Covid-19 informados pelo Ministério da Saúde|
-
 
 
 # Metodologia
