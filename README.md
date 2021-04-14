@@ -22,7 +22,7 @@ Neste contexto, buscaremos por dados que apontem  o impacto da pandemia no trata
 Link para vídeo de apresentação da proposta do projeto: https://drive.google.com/file/d/1w6-9AbcpNAfgPTRWBStaWuJMb-mndVEQ/view?usp=sharing 
 
 # Pergunta de Pesquisa
-Qual o impacto da pandemia de Covid-19 no tratamento do câncer de mama não metastático, em mulheres acima dos 60 anos, atendidas no Sistema Único de Saúde (SUS)?
+Qual o impacto da pandemia de Covid-19 no tratamento do câncer de mama não metastático, em mulheres acima dos 60 anos, atendidas no Sistema Único de Saúde (SUS).
 
 # Bases de Dados
 Para o desenvolvimento do projeto foram utilizadas a base de dados fornecido pelo Departamento de Informática do Sistema Único de Saúde (DATASUS) e a base de dados do Coronavírus Brasil que disponibiliza o número de casos de Covid-19.
