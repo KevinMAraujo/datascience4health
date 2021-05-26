@@ -245,11 +245,10 @@ Analisamos a variação do número de casos novos por mês por estado, e após, 
 
 Após essa avaliação geral, destacamos:
 
-* A região Norte alcançou o pico de novos casos mais precocemente que outras regiões do país, , em junho de 2020. Dentre os estados desta região, o Amazonas foi o primeiro estado a alcançar o pico de novos casos, em maio de 2020. É possível visualizar no gráfico de barras da região e por estado.
-
+* A região Norte alcançou o pico de novos casos mais precocemente que outras regiões do país, , em junho de 2020. 
 ![Figura 23](./assets/images/Fig23.png)
 
-* A região Sul mostrou ser a região a mais tardiamente atingir o pico de casos novos, ocorrendo em agosto de 2020, no entanto o pico se deu mais tarde em dezembro de 2020. 
+* A região Sul mostrou ser a região a mais tardiamente atingir o pico de casos novos, ocorrendo em agosto de 2020. 
 
 ![Figura 24](./assets/images/Fig24.png)
 
