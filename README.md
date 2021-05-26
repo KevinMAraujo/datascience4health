@@ -24,15 +24,6 @@ Link para vídeo de apresentação da proposta do projeto: https://drive.google.
 # Pergunta de Pesquisa
 Qual o impacto da pandemia de Covid-19 no tratamento do câncer de mama não metastático, em mulheres acima dos 60 anos, atendidas no Sistema Único de Saúde (SUS).
 
-# Bases de Dados
-Para o desenvolvimento do projeto foram utilizadas a base de dados fornecido pelo Departamento de Informática do Sistema Único de Saúde (DATASUS) e a base de dados do Coronavírus Brasil que disponibiliza o número de casos de Covid-19.
-
-
-| Base de Dados | Localização | Descrição |
-|--|--|--|
-| SIASUS | [*DATASUS/SIASUS*](http://www2.datasus.gov.br/DATASUS/index.php?area=0901&item=1&acao=22&pad=31655) | Arquivos com informações referente aos atendimentos ambulatoriais. |
-| SIH/SUS | [*DATASUS/SIHSUS*](http://www2.datasus.gov.br/DATASUS/index.php?area=0202&id=11633) | Arquivos com informações de cirurgias. |
-|COVID-19 | [*CoronavírusBrasil*](https://covid.saude.gov.br/) | Site com painel interativo com dados da Covid-19 informados pelo Ministério da Saúde|
 
 
 # Metodologia
@@ -56,6 +47,221 @@ Em relação ao câncer, consideraremos as seguintes variáveis: idade, localiza
 A frequência de cada conjunto de procedimentos (quimioterapia, hormonioterapia, radioterapia e cirurgia) será apresentada como média e desvio padrão, por ano e região. Se nós observarmos redução na frequência de tratamento em 2020 em relação aos anos anteriores, nós iremos verificar a região com maior redução e a frequência de casos de Covid-19, para estabelecer uma possível relação entre a pandemia e a redução no número de procedimentos.
 
 Este estudo será conduzido com base no modelo de processo *Knowledge Discovery in Databases* (KDD) e suas respectivas etapas descritas por Fayyad e col [8]. Iniciaremos pela seleção das bases de dados que serão utilizadas. Após, as bases de dados serão pré-processadas e tratadas, com o objetivo de entender os dados obtidos, remover dados errados, nulos, irrelevantes ou considerados como outliers. Para a manipulação, cruzamento e análise das bases de dados iremos utilizar a linguagem de programação Python, em alguns momentos será utilizado o programa Jupyter Notebook para auxiliar no desenvolvimento dos códigos que serão criados para o desenvolvimento do projeto. Também será utilizado a ferramenta Orange3 Data Mining e WEKA, que são ferramentas que auxiliam na análise e mineração dos dados.
+
+## Bases de Dados e Evolução
+### Bases Estudadas mas Não Adotadas
+| Base de Dados | Localização | Descrição |
+|--|--|--|
+| Observatório de oncologia | [*Observatório de Oncologia*](http://observatoriodeoncologia.com.br/tratamento-do-cancer-de-mama-no-sus/) | plataforma online de monitoramento de dados abertos |
+
+Esta base foi consultada para verificação dos dados de número de casos de câncer de mama. Não se trata de uma base geradora de banco, por essa razão não a utilizamos.
+
+
+### Bases Estudadas e Adotadas
+Para este projeto foram utilizadas as bases de dados fornecido pelo DATASUS, o integrador de Registros Hospitalares de Câncer (RHC) desenvolvido pelo INCA, e uma base de dados do Coronavírus Brasil que possui os dados sobre a Covid-19.
+
+
+| Base de Dados | Localização | Descrição |
+|--|--|--|
+| SIASUS | [*DATASUS/SIASUS*](http://www2.datasus.gov.br/DATASUS/index.php?area=0901&item=1&acao=22&pad=31655) | Arquivos com informações referente aos atendimentos ambulatoriais. |
+| SIH/SUS | [*DATASUS/SIHSUS*](http://www2.datasus.gov.br/DATASUS/index.php?area=0202&id=11633) | Arquivos com informações de cirurgias. |
+|COVID-19 | [*CoronavírusBrasil*](https://covid.saude.gov.br/) | Site com painel interativo com dados da Covid-19 informados pelo Ministério da Saúde|
+|Integrador RHC|[*Integrador RHC*](https://irhc.inca.gov.br/RHCNet/)|sistema desenvolvido pelo INCA para consolidação de dados hospitalares provenientes dos Registros Hospitalares de Câncer de todo o Brasil.|
+
+
+### Integração entre Bases e Análise Exploratória
+
+**Datasus:**
+
+**BANCO DE DADOS: APAC**
+
+As informações contidas nos arquivos de procedimentos ambulatoriais referem-se aos atendimentos ambulatoriais realizados nas respectivas competências (ano e mês). Dentro do arquivo dbf constam dados dos procedimentos ambulatoriais obtidos através do instrumento de registro do SIASUS denominado Autorização de Procedimentos Ambulatoriais de Alta Complexidade (APAC).
+
+Um instrumento APAC gera diversos registros no arquivo, sendo um para cada código de procedimento na APAC, seja ele procedimento principal ou secundário. Neste projeto, iremos utilizar apenas o procedimento principal. Tais procedimentos foram consultados no SIGTAP e no Manual de Bases Técnicas em Oncologia, versão 2019 e selecionados conforme o critério de elegibilidade (doença não metastática).
+
+Os arquivos de APAC são compostos conforme o tipo de laudo (tipo de atendimento) da APAC. Para nossas análises utilizamos apenas laudos de medicamentos, de quimioterapia e de radioterapia. 
+
+***APAC - quimioterapia***
+
+A base de dados da APAC de Quimioterapia possui 63 variáveis, que são definidas e explicadas pela documentação oficial do DATASUS referente ao SIASUS (Informe Técnico 2016-03).Para análise, elencamos 7 variáveis do banco: idade, se a APAC era inicial ou continuidade, CID principal, estadiamento da doença, esquema do tratamento, estado, e data de solicitação. Estas variáveis auxiliaram na certeza de que estávamos com dados da população que elegemos para o estudo.
+ 
+Com as variáveis definidas, iniciamos o processo de extração, tratamento e carga dos dados. Os arquivos fornecidos pelo DATASUS possuem um arquivo de extensão ‘dbc’. Esse tipo de extensão é lido pelo programa Tabwin que é fornecido pelo próprio DATASUS. Utilizando o Tabwin realizamos as leituras dos arquivos dbc dos anos de  2016 a 2020, e realizamos a expansão dos dados para um arquivo no formato ‘dbf’. A partir dos arquivos ‘dbf’ realizamos a extração e conversão dos dados contidos, utilizando código em Python. Como o foco do trabalho é analisar o cancer em pessoas do sexo feminino, no momento da extração dos dados para um arquivo excel foi realizado um filtro onde apenas os registros relacionados ao sexo feminino foi extraido.
+
+Neste primeiro processo de ETL, foi obtido um arquivo em excel com aproximadamente 17 milhões de regitros (17.026.164) do sexo masculino e feminino, ao selecionar apenas os dados do sexo feminino e restringir os procedimentos que são aplicados ao nosso problema (AP_PRIPAL), obtivemos uma base de dados com quase 11 milhões de registros (10.904.294 registros).
+
+A variável AP_PRIPAL é referente ao código do procedimento principal realizada na APAC. Com base no SIGTAP e do Manual de Oncologia, versão 2019, elencamos os códigos de procedimentos indicados para mulheres com doença não metastática. Optamos por analisar somente dados de pacientes com doença não metastática porque, a princípio, são pacientes com maior chance de cura, e no caso de encontrarmos redução no número de procedimentos, saberíamos que a pandemia estaria impactando em pessoas com bom prognóstico. Com o objetivo de facilitar a análise dos procedimentos que são considerados como metastático ou não metastático, foi criada a variável METASTÁTICO, que varia entre 0 ou 1, onde 0 é um procedimento não metastático, e 1 é um procedimento metastático. 
+
+Após o primeiro tratamento concluído iniciamos o segundo processo de tratamento dos dados. Antes de aplicarmos o filtro de idade nos dados e assim obter uma redução dos nossos dados, resolvemos aplicar algumas análises simples nessa primeira base de dados. O objetivo dessa análise foi verificar se os dados de mulheres ⩽ 60 anos e ⩾ 60 anos estavam balanceados. Mesmo que o foco do nosso trabalho fosse as mulheres ⩾ 60 anos, resolvemos analisar a base para garantir que os dados femininos não estariam desbalanceados nessa faixa etária.
+
+Desta forma, conseguimos identificar que a base de dados possui cerca de 53,23 % dados referente a mulheres com idade menor que 60 anos, e aproximadamente 46,77 % de dados de mulheres com 60 anos ou mais. Fizemos mais algumas análises por outras faixas etárias, que é apresentada na tabela a seguir:
+
+**Distribuição de registros por faixa etária**
+|Faixa Etária (anos)|Quantidade|% Percentual|
+|--|--|--|
+|0 - 19|145618|1,335 %|
+|20 - 39|761234|6,981 %|
+|40 - 59|4897659|44,915 %|
+|60 - 79|4457667|40,880 %|
+|80 - 100|642120|5,889 %|
+
+A partir dessa tabela podemos notar que a maioria dos registros estão entre a faixa etária de 40 aos 79 anos, dado que coincide com dados da literatura que apontam maior incidência na população idosa, a partir dos 60 anos, seguido pela faixa etária entre 40 e 59 anos.
+
+Após a análise por faixa etária resolvemos aplicar a análise dos registros com menos de 60 anos e com 60 anos ou mais por estados. Porém, para que isso fosse possível foi necessário converter a variável AP_UFMUN para o valor da unidade da de federação (UF). Essa variável possui 6 números, onde os dois primeiros são referentes ao código da unidade da federação. Os códigos de cada estado foram obtidos pela página do Instituto Brasileiro de Geografia e Estatística (IBGE). Com a conversão da variável AP_UFMUN para a UF, foi criado a variável “ESTADO_UF”, onde foi armazenado a UF de cada registro. Com esse tratamento, foi realizada a análise da distribuição dos dados abaixo e acima de 60 entre os estados, como pode ser visto na figura abaixo.
+
+
+![Figura 1](./assets/images/Fig1.png)
+
+
+Na figura acima pode-se perceber que os dados possuem um certo nível de balanço entre os dados das pessoas com menos de 60 anos e pessoas com 60 anos ou mais. Com a conclusão dessa primeira análise simples, analisando apenas a distribuição dos dados em relação à faixa etária definida e a sua distribuição entre os estados, aplicamos o filtro de idade nos dados. Dos quase 11 milhões de registros, selecionamos apenas os registros que possuíam 60 anos ou mais. Isso resultou em uma base de dados com aproximadamente 5 milhões de registros (5.099.787).
+
+Concluído o segundo processo de filtragem, iniciamos a análise dos registros da variável “AP_DTSOLIC”. A variável AP_DTSOLIC é a variável que apresenta a data da APAC. O objetivo é analisar os dados que estão entre os anos de 2016 e 2020, portanto todos os registros que possuem a data fora desse intervalo foram removidos. Também foram removidos os registros onde essa variável estava vazia, porque não era possível definir qual era o mês e ano daquele registro. Nesse processo foram removidos 250.180 registros.
+
+Após a conclusão dessa terceira filtragem, aplicamos um tratamento no campo AP_DTSOLIC para que os valores apresentados fossem referenciados ao último dia de cada mês e ano, facilitando assim um agrupamento e análise futura. Desta forma seria possível realizar o agrupamento dos dados, e assim reduzir o número de registros, mas sem perder suas características referentes às outras variáveis. 
+
+Com a conversão da features AP_DTSOLIC, que era referente à data da APAC, para o último dia do mês e ano da APAC e aplicando um agrupamento de todos os registros obtivemos um número de 1.790.600 registros agrupados. Uma redução considerável e que se fez necessário devido ao alto custo computacional que estava sendo gasto com a manipulação dos dados sem agrupamentos. Com o agrupamento foi criado a variável “QTD”, que informa a quantidade de registros que foram agrupados no novo registro. No agrupamento os dados missing existentes não foram removidos.
+
+Nesse momento, a única variável que apresentou dados missing foi a variável “AQ_ESQU_P2”, que se refere ao esquema terapêutico. O número de dados missing nessa variável foi de aproximadamente 20 % de linhas e 24% de registros no geral, e nesse primeiro momento escolhemos não remover esses dados da nossa análise.
+Após a aplicação dos procedimentos mencionados, iniciamos a análise mais detalhada dos dados.
+
+Como descrito anteriormente, elencamos mulheres acima de 60 anos para as análises, visto que desde o início da pandemia a população idosa foi reconhecida como sendo a mais afetada e com maior taxa de mortalidade causada pela Covid-19.
+
+Ao dividirmos  a faixa etária acima de 60 anos em subgrupos etários, verificamos uma maior frequência de procedimento “quimioterapia” na faixa etária 60-70 anos (55,7%), seguido por 70-80 anos (31,7%) e 80-90 anos (11,1%). Acima de 90 anos a parcela de mulheres com câncer mostrou-se bastante reduzida, 1,5%.
+
+|Faixa Etária|Quantidade de Registros|% de Registros|
+|--|--|--|
+|60 - 69|2016472|55,725 %|
+|70 - 79|1146504|31,683 %|
+|80 - 89|401474|11,095 %|
+|90 - 100|54190|1,497 %|
+
+
+Os cinco estados com maior volume de procedimentos estão na região Sul (Paraná com 259160 registros e Rio Grande do Sul com 418355 registros) e Sudeste (São Paulo com 977937 registros, Minas Gerais com 441108 registros e Rio de Janeiro com 298919 registros).
+
+![Figura 2](./assets/images/Fig2.png)
+
+Para verificar se a Covid-19 impactou na quantidade dos procedimentos que elencamos como de nosso interesse  e realizados em 2020, fizemos uma análise de distribuição por ano e observamos uma pequena variação dos dados em relação ao ano anterior, com exceção do ano de 2018 que mostrou uma variação de 18.4% em relação aos dois anos anteriores. Porém, em 2019 não houve variação expressiva, assim como também não observamos variação em 2020.
+
+
+
+|Ano|Qtd.|% de Variação|
+|--|--|--|
+|2016|656882|0 %|
+|2017|637126|-3,007|
+|2018|754606|18,439 %|
+|2019|790968|4,819 %|
+|2020|779058|-1,506 %|
+
+![Figura 3](./assets/images/Fig3.png)
+
+
+Ao analisar os dados de estadiamento (AQ_ESTADI), predominou o estadiamento II, que é considerado um estadiamento menos grave que o estadiamento IV. Como selecionamos códigos de procedimentos relacionados à doença não metastática, era esperado que não constasse em nosso banco de dados mulheres com estádio IV, porém há o registro de procedimentos para mulheres com estádio IV em nosso banco. 
+
+
+![Figura 4](./assets/images/Fig4.png)
+
+
+Após estas análises preliminares, procedemos à análise por ano e por estado. Na visualização dos gráficos selecionamos algumas observações para aprofundar na análise exploratória:
+
+a. O estado do Acre teve uma queda acima de 50% na quantidade de procedimentos em 2020;
+
+![Figura 5](./assets/images/Fig5.png)
+
+
+b. Os estados do Alagoas, Amazonas, Bahia, Ceará, Distrito Federal, Espírito Santo, Goiás, Maranhão, Minas Gerais, Mato Grosso do Sul, Mato Grosso, Pará, Paraíba, Pernambuco, Piauí, Paraná, Rio de Janeiro, Rio Grande do Norte, Rondônia, Rio Grande do Sul, Santa Catarina, Sergipe, São Paulo,  parecem não ter afetado os procedimentos (redução em torno de 10% ou aumento na produção);
+
+
+![Figura 6](./assets/images/Fig6.png)
+![Figura 7](./assets/images/Fig7.png)
+![Figura 8](./assets/images/Fig8.png)
+![Figura 9](./assets/images/Fig9.png)
+![Figura 10](./assets/images/Fig10.png)
+![Figura 11](./assets/images/Fig11.png)
+
+ 
+c. O estado do Amapá apresentou uma redução no número de procedimentos, porém esta tendência já vinha do ano anterior, então não faremos inicialmente uma correlação com a pandemia. Reservamos este dado para análise posterior;
+
+![Figura 12](./assets/images/Fig12.png)
+
+d. Roraima teve crescimento (triplicou em relação a 2019) e Tocantins aumentou 40% em comparação aos anos de 2018 e 2019. Há algumas hipóteses para este fato: o estado ficou com deficiência no atendimento nestes 2 anos? Houve falha nos registros das APACs?
+
+![Figura 13](./assets/images/Fig13.png)
+
+Diante desta análise, em que aparentemente a pandemia parece não ter afetado os procedimentos de quimioterapia nas mulheres com câncer de mama não metastático acima de 60 anos, fizemos a análise por subgrupo, verificando este comportamento nas APACs iniciais versus APACs de continuidade (variável AP_TPAPAC), e o padrão manteve-se.
+
+Esta mesma impressão foi obtida na análise global de procedimentos por mês e ano. No gráfico abaixo é visível que ao longo da pandemia (março a outubro), a quantidade de procedimentos não mostra queda suficiente para sustentar a hipótese inicial deste estudo. Os meses de novembro e dezembro apresentam queda expressiva, porém este dado precisa ser visto com cautela, uma vez que a base de dados foi gerada em abril de 2021 e talvez os dados não estivessem totalmente disponíveis. Como a redução do dado global dos meses de novembro e dezembro de 2020 coincide com reduções observadas no mesmo período em todos os estados, faremos uma comparação deste período com os dados de Covid-19 por estado, para verificar se coincide com o período de maior incidência de casos no Brasil e se os estados com maior redução de procedimentos são os estados com maior número de casos de Covid-19. 
+
+![Figura 15](./assets/images/Fig15.png)
+![Figura 16](./assets/images/Fig16.png)
+![Figura 17](./assets/images/Fig17.png)
+![Figura 18](./assets/images/Fig18.png)
+![Figura 19](./assets/images/Fig19.png)
+
+
+
+
+***APAC - radioterapia***
+A base de dados da APAC radioterapia possui 72 variáveis, definidas e explicadas na mesma documentação do SIASUS mencionada anteriormente para APAC quimioterapia. Dentre estas variáveis, selecionamos 10, descritas a seguir.
+
+As variáveis AP_GESTAO e AP_UFMUN fornecem a localização do estabelecimento em que o serviço foi oferecido, e foram selecionadas a fim de nos permitir diferenciar os dados de cada estado, uma vez que o objetivo do projeto inclui avaliar estados e/ou regiões separadamente, além da visão geral do país.
+
+Para diferenciar os dados por ano, foi selecionada a variável AP_CMP, referente a data de atendimento ao paciente. Outras datas, como a de aprovação ou validade da APAC, não foram incluídas pois estes dados não seriam relevantes para a nossa análise considerando o objetivo do estudo.
+
+A variável AP_PRIPAL fornece o código do procedimento realizado. Os códigos são específicos para cada procedimento, definidos nas Tabelas de Procedimentos do SUS, desta forma poderíamos selecionar apenas os códigos referentes à radioterapia de mama.
+
+Para analisar apenas a população de interesse, utilizamos as variáveis AP_NUIDADE (idade) e AP_SEXO (sexo), para permitir identificar as pacientes do sexo feminino e com mais de 60 anos.
+
+Variáveis que fornecem maiores detalhes sobre a doença foram incluídas, a fim de permitir explorar diferenças das variações de tratamento de acordo com o estadiamento (AR_ESTADI) e finalidade (AR_FINALI).
+
+O CID (Classificação Internacional de Doenças) dado pela variável AP_CIDPRI também foi incluído, como uma segunda fonte para identificar a doença. O CID para câncer de mama é o 50.0.
+
+A variável AP_TPAPAC indica se a APAC é inicial, de continuidade ou única. Esta variável foi incluída para permitir eventual análise de quais “estágios” da terapia houve redução dos tratamentos, caso a análise exploratória indicasse que isso pode ter ocorrido.
+
+As demais variáveis não foram selecionadas pois não seriam relevantes dentro do objetivo do projeto. Desta forma, não foram incluídas variáveis como o número e valor da APAC, e variáveis relacionadas a dados do estabelecimento que realizou o procedimento, dados sociodemográficos e endereço do paciente.
+
+As variáveis não selecionadas foram excluídas e o filtros foram aplicados a fim de selecionar a população de interesse do projeto: sexo feminino, ⩾ 60 anos, e código de procedimento de radioterapia de mama (304010413). Os resultados obtidos com os filtros corresponderam a 7% do banco de dados. No entanto, nas primeiras análises verificamos que não haviam registros para anos anteriores a 2019, conforme é possível visualizar no gráfico abaixo (⩾ 60 anos, sexo feminino, por ano).
+
+![Figura 20](./assets/images/Fig20.png)
+
+Procuramos entender esta ausência de dados e verificamos que em 2019 foi publicada a Portaria nº 263/2019, que atualiza a tabela de procedimentos radioterápicos do SUS e cria o código de radioterapia de mama utilizado. Uma alternativa para contornar esta ausência é aplicar o filtro utilizando o CID 50, o que ainda será testado. No entanto, é preciso considerar que ao selecionar o CID 50, não é possível diferenciar o câncer metastático do não metastático, portanto não é possível dar uma resposta de acordo com a pergunta de pesquisa inicial que incluiu apenas pacientes com câncer não metastático.
+
+
+***Integrador RHC:***
+
+A base permite consultar os dados ou realizar o download. Porém, como o propósito das informações geradas na base era apenas para visualizar o número total de casos de câncer de mama por unidade federal no período de 2016 a 2019, não obtivemos o banco de dados para análise exploratória, fizemos apenas a consulta por ano.
+
+
+***CoronavírusBrasil:***
+
+A plataforma CoronavírusBrasil disponibiliza o banco de dados oficial contendo os dados novos e acumulados por dia desde fevereiro de 2020. Neste estudo avaliamos a evolução da pandemia até dezembro de 2020.
+
+![Figura 21](./assets/images/Fig21.png)
+
+A seguir é possível verificar uma visão geral do número de casos novos e de mortes no país, por mês. É possível observar que os números de casos novos e de mortes se comportam de maneira semelhante.
+
+![Figura 22](./assets/images/Fig22.png)
+
+Analisamos a variação do número de casos novos por mês por estado, e após, por região (Norte, Nordeste, Centro Oeste, Sul, Sudeste). De maneira geral, as distribuições são parecidas, no entanto ainda não analisamos a proporção em relação ao tamanho da população do estado específico. Esta é uma variável disponível no banco de dados e esta análise ainda será realizada, a fim de identificar os estados mais impactados pela pandemia.  
+
+
+Após essa avaliação geral, destacamos:
+
+* A região Norte alcançou o pico de novos casos mais precocemente que outras regiões do país, , em junho de 2020. Dentre os estados desta região, o Amazonas foi o primeiro estado a alcançar o pico de novos casos, em maio de 2020. É possível visualizar no gráfico de barras da região e por estado.
+
+![Figura 23](./assets/images/Fig23.png)
+
+* A região Sul mostrou ser a região a mais tardiamente atingir o pico de casos novos, ocorrendo em agosto de 2020, no entanto o pico se deu mais tarde em dezembro de 2020. 
+
+![Figura 24](./assets/images/Fig24.png)
+
+* A região sudeste teve um grande aumento também em julho e agosto, com queda posterior e novo pico em dezembro. O mesmo aconteceu na região Nordeste.
+
+
+![Figura 25](./assets/images/Fig25.png)
+![Figura 26](./assets/images/Fig26.png)
+
+* a região centro Oeste teve pico em agosto.
+
+![Figura 27](./assets/images/Fig27.png)
 
 
 # Ferramentas
