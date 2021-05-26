@@ -1,0 +1,1 @@
+dados originais sem modificações
