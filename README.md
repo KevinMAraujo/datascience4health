@@ -17,36 +17,34 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 A COVID-19, doença causada pelo vírus SARS-CoV-2, emergiu na China no final de 2019. Com o número crescente de casos avançando globalmente, em março de 2020 a Organização Mundial de Saúde reconheceu a pandemia [1] e instituiu medidas preventivas contra a disseminação, incluindo distanciamento associado à medidas de higiene [2]. A doença, transmitida por via respiratória [3],  causou até abril de 2021, mais de 2,9 milhões de óbitos em todo o mundo [4] e mais de 340 mil no Brasil [5]. 
 Dentre os diversos impactos da pandemia observados globalmente, o medo da COVID-19 resultou em uma redução na demanda por atendimento médico em situações consideradas não urgentes, incluindo exames diagnósticos de câncer e o próprio tratamento, incluindo quimioterapia, radioterapia ou cirurgia [6]. No Brasil, os diagnósticos de câncer reduziram de 24,3% (região Norte) a 42,7% (região Nordeste), com média de 35,5% no país, correspondentes a 15 mil casos não diagnosticados por mês no período de janeiro a agosto de 2020 [7]. O tratamento dos pacientes com câncer também reduziu em alguns países, tornando-se uma preocupação desde o início da pandemia [6]. 
 
-Neste contexto, buscaremos por dados que apontem  o impacto da pandemia no tratamento de mulheres com idade igual ou superior a 60 anos com câncer de mama no Brasil. Faremos uma comparação do número de procedimentos relacionados aos tratamentos (quimioterapia, radioterapia ou cirurgia) realizados durante a pandemia em 2020 com a quantidade realizada no mesmo período em anos anteriores.
+Neste contexto, buscamos por dados que apontassem  o impacto da pandemia no tratamento de mulheres com idade igual ou superior a 60 anos com câncer de mama no Brasil. Fizemos a comparação do número de procedimentos relacionados aos tratamentos (quimioterapia e radioterapia) realizados durante a pandemia em 2020 com a quantidade realizada no mesmo período em anos anteriores.
 
 Link para vídeo de apresentação da proposta do projeto: https://drive.google.com/file/d/1w6-9AbcpNAfgPTRWBStaWuJMb-mndVEQ/view?usp=sharing 
 
 # Pergunta de Pesquisa
 Qual o impacto da pandemia de Covid-19 no tratamento do câncer de mama não metastático, em mulheres acima dos 60 anos, atendidas no Sistema Único de Saúde (SUS).
 
-
-
 # Metodologia
 
-Com base nas informações de acesso público disponibilizadas pelo Departamento de Informática do Sistema Único de Saúde (DATASUS), analisaremos os dados mensais de produção ambulatorial e hospitalar relacionados aos procedimentos de tratamento do câncer de mama, por região de atendimento, no período de Janeiro de 2015 a Dezembro de 2020. Buscaremos estes dados no sistema TabNet, que é um programa do DATASUS em que os dados são tabulados e disponibilizados em ambiente internet, com auxílio da ferramenta TabWin, que permite o cruzamento destes dados. 
-
-Serão incluídos os dados de mulheres com idade ≥ 60 anos, com diagnóstico de câncer de mama não metastático, atendidas no Sistema Único de Saúde (SUS).
-
-Com base nas diretrizes diagnósticas e terapêuticas do carcinoma de mama, consultamos os códigos dos procedimentos no sistema de gerenciamento da tabela de procedimentos, medicamentos e OPM do SUS (SIGTAP). Serão obtidos os dados dos seguintes procedimentos:
+Com base nas informações de acesso público disponibilizadas pelo Departamento de Informática do Sistema Único de Saúde (DATASUS), analisamos os dados mensais de produção ambulatorial relacionados aos procedimentos de tratamento do câncer de mama, por região de atendimento, no período de Janeiro de 2016 a Dezembro de 2020. Buscamos estes dados no sistema TabNet, que é um programa do DATASUS em que os dados são tabulados e disponibilizados em ambiente internet, com auxílio da ferramenta TabWin, que permite o cruzamento destes dados. Incluímos os dados de mulheres com idade ≥ 60 anos, com diagnóstico de câncer de mama não metastático, atendidas no Sistema Único de Saúde (SUS).
+Com base nas diretrizes diagnósticas e terapêuticas do carcinoma de mama, consultamos os códigos dos procedimentos no sistema de gerenciamento da tabela de procedimentos, medicamentos e OPM do SUS (SIGTAP). Obtivemos os dados dos seguintes procedimentos:
 * monoquimioterapia ou poliquimioterapia
 * hormonioterapia
 * radioterapia de mama
-* mastectomia
-* ressecção de lesão não palpável de mama
-* segmentectomia/quadrantectomia/setorectomia de mama
 
-O número de casos acumulados de Covid-19 por região será obtido na plataforma [*CoronavírusBrasil*](https://covid.saude.gov.br/).
+O número de casos acumulados de Covid-19 por região foi obtido na plataforma [*CoronavírusBrasil*](https://covid.saude.gov.br/).
 
-Em relação ao câncer, consideraremos as seguintes variáveis: idade, localização geográfica (região de tratamento), tipo de tratamento. Em relação à Covid-19 consideraremos as mesmas variáveis, exceto o tipo de tratamento.
+Em relação ao câncer, consideramos as seguintes variáveis categóricas: localização geográfica (região de tratamento), tipo de tratamento, e numéricas: idade. Em relação à Covid-19 consideramos as mesmas variáveis, exceto o tipo de tratamento.
 
-A frequência de cada conjunto de procedimentos (quimioterapia, hormonioterapia, radioterapia e cirurgia) será apresentada como média e desvio padrão, por ano e região. Se nós observarmos redução na frequência de tratamento em 2020 em relação aos anos anteriores, nós iremos verificar a região com maior redução e a frequência de casos de Covid-19, para estabelecer uma possível relação entre a pandemia e a redução no número de procedimentos.
+A frequência de cada conjunto de procedimentos (quimioterapia e radioterapia) está descrita como média, por ano e região. Considerando que as variáveis assumirão uma distribuição normal, afim de comparar as proporções e distribuições dos procedimentos entre cada ano, aplicamos o teste de hipótese qui-quadrado com as seguintes hipóteses:
+H0: 2016 = 2017 = 2018 = 2019 = 2020
+H1: 2016 ≠ 2017 ≠ 2018 ≠ 2019 ≠ 2020
 
-Este estudo será conduzido com base no modelo de processo *Knowledge Discovery in Databases* (KDD) e suas respectivas etapas descritas por Fayyad e col [8]. Iniciaremos pela seleção das bases de dados que serão utilizadas. Após, as bases de dados serão pré-processadas e tratadas, com o objetivo de entender os dados obtidos, remover dados errados, nulos, irrelevantes ou considerados como outliers. Para a manipulação, cruzamento e análise das bases de dados iremos utilizar a linguagem de programação Python, em alguns momentos será utilizado o programa Jupyter Notebook para auxiliar no desenvolvimento dos códigos que serão criados para o desenvolvimento do projeto. Também será utilizado a ferramenta Orange3 Data Mining e WEKA, que são ferramentas que auxiliam na análise e mineração dos dados.
+Adotamos P < 0.05.
+
+Os dados foram organizados e apresentados em tabelas de frequências e gráficos.
+
+O estudo foi conduzido com base no modelo de processo *Knowledge Discovery in Databases* (KDD) e suas respectivas etapas descritas por Fayyad e col [8]. Fizemos a seleção das bases de dados para uso, pré-processamos, e tratamos, com o objetivo de entender os dados obtidos, remover dados errados, nulos, irrelevantes ou considerados como outliers. Para a manipulação, cruzamento e análise das bases de dados utilizamos a linguagem de programação Python, e em alguns momentos utilizamos o programa Jupyter Notebook para auxiliar no desenvolvimento dos códigos. Também será utilizado a ferramenta Orange3 Data Mining e WEKA, que são ferramentas que auxiliam na análise e mineração dos dados.
 
 ## Bases de Dados e Evolução
 ### Bases Estudadas mas Não Adotadas
@@ -58,7 +56,7 @@ Esta base foi consultada para verificação dos dados de número de casos de câ
 
 
 ### Bases Estudadas e Adotadas
-Para este projeto foram utilizadas as bases de dados fornecido pelo DATASUS, o integrador de Registros Hospitalares de Câncer (RHC) desenvolvido pelo INCA, e uma base de dados do Coronavírus Brasil que possui os dados sobre a Covid-19.
+Utilizamos as bases de dados fornecido pelo DATASUS, o integrador de Registros Hospitalares de Câncer (RHC) desenvolvido pelo INCA, e uma base de dados do Coronavírus Brasil que possui os dados sobre a Covid-19.
 
 
 | Base de Dados | Localização | Descrição |
@@ -77,13 +75,13 @@ Para este projeto foram utilizadas as bases de dados fornecido pelo DATASUS, o i
 
 As informações contidas nos arquivos de procedimentos ambulatoriais referem-se aos atendimentos ambulatoriais realizados nas respectivas competências (ano e mês). Dentro do arquivo dbf constam dados dos procedimentos ambulatoriais obtidos através do instrumento de registro do SIASUS denominado Autorização de Procedimentos Ambulatoriais de Alta Complexidade (APAC).
 
-Um instrumento APAC gera diversos registros no arquivo, sendo um para cada código de procedimento na APAC, seja ele procedimento principal ou secundário. Neste projeto, iremos utilizar apenas o procedimento principal. Tais procedimentos foram consultados no SIGTAP e no Manual de Bases Técnicas em Oncologia, versão 2019 e selecionados conforme o critério de elegibilidade (doença não metastática).
+Um instrumento APAC gera diversos registros no arquivo, sendo um para cada código de procedimento na APAC, seja ele procedimento principal ou secundário. Neste estudo utilizamos apenas o procedimento principal. Tais procedimentos foram consultados no SIGTAP e no Manual de Bases Técnicas em Oncologia, versão 2019 e selecionados conforme o critério de elegibilidade (doença não metastática).
 
 Os arquivos de APAC são compostos conforme o tipo de laudo (tipo de atendimento) da APAC. Para nossas análises utilizamos apenas laudos de medicamentos, de quimioterapia e de radioterapia. 
 
 ***APAC - quimioterapia***
 
-A base de dados da APAC de Quimioterapia possui 63 variáveis, que são definidas e explicadas pela documentação oficial do DATASUS referente ao SIASUS (Informe Técnico 2016-03).Para análise, elencamos 7 variáveis do banco: idade, se a APAC era inicial ou continuidade, CID principal, estadiamento da doença, esquema do tratamento, estado, e data de solicitação. Estas variáveis auxiliaram na certeza de que estávamos com dados da população que elegemos para o estudo.
+A base de dados da APAC de Quimioterapia possui 63 variáveis, que são definidas e explicadas pela documentação oficial do DATASUS referente ao SIASUS (Informe Técnico 2016-03). Para análise, elencamos 7 variáveis do banco: idade, se a APAC era inicial ou continuidade, CID principal, estadiamento da doença, esquema do tratamento, estado, e data de solicitação. Estas variáveis auxiliaram na certeza de que estávamos com dados da população que elegemos para o estudo.
  
 Com as variáveis definidas, iniciamos o processo de extração, tratamento e carga dos dados. Os arquivos fornecidos pelo DATASUS possuem um arquivo de extensão ‘dbc’. Esse tipo de extensão é lido pelo programa Tabwin que é fornecido pelo próprio DATASUS. Utilizando o Tabwin realizamos as leituras dos arquivos dbc dos anos de  2016 a 2020, e realizamos a expansão dos dados para um arquivo no formato ‘dbf’. A partir dos arquivos ‘dbf’ realizamos a extração e conversão dos dados contidos, utilizando código em Python. Como o foco do trabalho é analisar o cancer em pessoas do sexo feminino, no momento da extração dos dados para um arquivo excel foi realizado um filtro onde apenas os registros relacionados ao sexo feminino foi extraido.
 
@@ -95,63 +93,65 @@ Após o primeiro tratamento concluído iniciamos o segundo processo de tratament
 
 Desta forma, conseguimos identificar que a base de dados possui cerca de 53,23 % dados referente a mulheres com idade menor que 60 anos, e aproximadamente 46,77 % de dados de mulheres com 60 anos ou mais. Fizemos mais algumas análises por outras faixas etárias, que é apresentada na tabela a seguir:
 
-**Distribuição de registros por faixa etária**
-|Faixa Etária (anos)|Quantidade|% Percentual|
+**Tabela 1 - Distribuição de registros por faixa etária**
+|Faixa Etária (anos)|Quantidade|%|
 |--|--|--|
-|0 - 19|145618|1,335 %|
-|20 - 39|761234|6,981 %|
-|40 - 59|4897659|44,915 %|
-|60 - 79|4457667|40,880 %|
-|80 - 100|642120|5,889 %|
+|0 - 19|145618|1,3|
+|20 - 39|761234|7,0|
+|40 - 59|4897659|44,9|
+|60 - 79|4457667|40,9|
+|80 - 100|642120|5,9|
 
-A partir dessa tabela podemos notar que a maioria dos registros estão entre a faixa etária de 40 aos 79 anos, dado que coincide com dados da literatura que apontam maior incidência na população idosa, a partir dos 60 anos, seguido pela faixa etária entre 40 e 59 anos.
+A partir dessa tabela podemos notar que a maioria dos registros estão na faixa etária 40 a 79 anos, informação que coincide com dados da literatura que apontam maior incidência na população idosa, a partir dos 60 anos, seguido pela faixa etária entre 40 e 59 anos.
 
-Após a análise por faixa etária resolvemos aplicar a análise dos registros com menos de 60 anos e com 60 anos ou mais por estados. Porém, para que isso fosse possível foi necessário converter a variável AP_UFMUN para o valor da unidade da de federação (UF). Essa variável possui 6 números, onde os dois primeiros são referentes ao código da unidade da federação. Os códigos de cada estado foram obtidos pela página do Instituto Brasileiro de Geografia e Estatística (IBGE). Com a conversão da variável AP_UFMUN para a UF, foi criado a variável “ESTADO_UF”, onde foi armazenado a UF de cada registro. Com esse tratamento, foi realizada a análise da distribuição dos dados abaixo e acima de 60 entre os estados, como pode ser visto na figura abaixo.
+Também análisamos os registros das pacientes com menos de 60 anos e acima dos 60 anos por estado. Porém, para que isso fosse possível foi necessário converter a variável AP_UFMUN para o valor da unidade da federação (UF). Essa variável possui 6 números, onde os dois primeiros são referentes ao código da unidade da federação. Os códigos de cada estado foram obtidos pela página do Instituto Brasileiro de Geografia e Estatística (IBGE). Com a conversão da variável AP_UFMUN para a UF, foi criado a variável “ESTADO_UF”, onde foi armazenado a UF de cada registro. Com esse tratamento, foi realizada a análise da distribuição dos dados abaixo e acima de 60 entre os estados, como pode ser visto na figura 1 .
 
 
 ![Figura 1](./assets/images/Fig1.png)
 
 
-Na figura acima pode-se perceber que os dados possuem um certo nível de balanço entre os dados das pessoas com menos de 60 anos e pessoas com 60 anos ou mais. Com a conclusão dessa primeira análise simples, analisando apenas a distribuição dos dados em relação à faixa etária definida e a sua distribuição entre os estados, aplicamos o filtro de idade nos dados. Dos quase 11 milhões de registros, selecionamos apenas os registros que possuíam 60 anos ou mais. Isso resultou em uma base de dados com aproximadamente 5 milhões de registros (5.099.787).
+Na figura 1 observamos que os dados possuem um certo balanço entre os dados das pessoas com menos de 60 anos e pessoas acima dos 60 anos. Com a conclusão dessa primeira análise simples, analisando apenas a distribuição dos dados em relação à faixa etária definida e a sua distribuição entre os estados, aplicamos o filtro de idade nos dados. Dos quase 11 milhões de registros, selecionamos apenas os registros que possuíam 60 anos ou mais. Isso resultou em uma base de dados com aproximadamente 5 milhões de registros (5.099.787).
 
 Concluído o segundo processo de filtragem, iniciamos a análise dos registros da variável “AP_DTSOLIC”. A variável AP_DTSOLIC é a variável que apresenta a data da APAC. O objetivo é analisar os dados que estão entre os anos de 2016 e 2020, portanto todos os registros que possuem a data fora desse intervalo foram removidos. Também foram removidos os registros onde essa variável estava vazia, porque não era possível definir qual era o mês e ano daquele registro. Nesse processo foram removidos 250.180 registros.
 
 Após a conclusão dessa terceira filtragem, aplicamos um tratamento no campo AP_DTSOLIC para que os valores apresentados fossem referenciados ao último dia de cada mês e ano, facilitando assim um agrupamento e análise futura. Desta forma seria possível realizar o agrupamento dos dados, e assim reduzir o número de registros, mas sem perder suas características referentes às outras variáveis. 
 
-Com a conversão da features AP_DTSOLIC, que era referente à data da APAC, para o último dia do mês e ano da APAC e aplicando um agrupamento de todos os registros obtivemos um número de 1.790.600 registros agrupados. Uma redução considerável e que se fez necessário devido ao alto custo computacional que estava sendo gasto com a manipulação dos dados sem agrupamentos. Com o agrupamento foi criado a variável “QTD”, que informa a quantidade de registros que foram agrupados no novo registro. No agrupamento os dados missing existentes não foram removidos.
+Com a conversão da features AP_DTSOLIC e aplicando um agrupamento de todos os registros, obtivemos um número de 1.790.600 registros agrupados. Uma redução considerável e que se fez necessário devido ao alto custo computacional que estava sendo gasto com a manipulação dos dados sem agrupamentos. Com o agrupamento foi criado a variável “QTD”, que informa a quantidade de registros que foram agrupados no novo registro. No agrupamento os dados missing existentes não foram removidos.
 
 Nesse momento, a única variável que apresentou dados missing foi a variável “AQ_ESQU_P2”, que se refere ao esquema terapêutico. O número de dados missing nessa variável foi de aproximadamente 20 % de linhas e 24% de registros no geral, e nesse primeiro momento escolhemos não remover esses dados da nossa análise.
 Após a aplicação dos procedimentos mencionados, iniciamos a análise mais detalhada dos dados.
 
 Como descrito anteriormente, elencamos mulheres acima de 60 anos para as análises, visto que desde o início da pandemia a população idosa foi reconhecida como sendo a mais afetada e com maior taxa de mortalidade causada pela Covid-19.
 
-Ao dividirmos  a faixa etária acima de 60 anos em subgrupos etários, verificamos uma maior frequência de procedimento “quimioterapia” na faixa etária 60-70 anos (55,7%), seguido por 70-80 anos (31,7%) e 80-90 anos (11,1%). Acima de 90 anos a parcela de mulheres com câncer mostrou-se bastante reduzida, 1,5%.
+Ao dividirmos a faixa etária acima de 60 anos em subgrupos etários, verificamos uma maior frequência de procedimento “quimioterapia” na faixa etária 60-70 anos (55,7%), seguido por 70-80 anos (31,7%) e 80-90 anos (11,1%). Acima de 90 anos a parcela de mulheres com câncer mostrou-se bastante reduzida, 1,5% (tabela 2).
+
+**Tabela 2 - Distribuição de registros por subgrupo etário**
 
 |Faixa Etária|Quantidade de Registros|% de Registros|
 |--|--|--|
-|60 - 69|2016472|55,725 %|
-|70 - 79|1146504|31,683 %|
-|80 - 89|401474|11,095 %|
-|90 - 100|54190|1,497 %|
+|60 - 69|2.016.472|55,7|
+|70 - 79|1.146.504|31,7|
+|80 - 89|401.474|11,1|
+|90 - 100|54.190|1,5|
 
 
-Os cinco estados com maior volume de procedimentos estão na região Sul (Paraná com 259160 registros e Rio Grande do Sul com 418355 registros) e Sudeste (São Paulo com 977937 registros, Minas Gerais com 441108 registros e Rio de Janeiro com 298919 registros).
+Os cinco estados com maior volume de procedimentos (Fig 2) estão na região Sul (Paraná com 259.160 registros e Rio Grande do Sul com 418.355 registros) e Sudeste (São Paulo com 977.937 registros, Minas Gerais com 441.108 registros e Rio de Janeiro com 298.919 registros).
 
 ![Figura 2](./assets/images/Fig2.png)
 
-Para verificar se a Covid-19 impactou na quantidade dos procedimentos que elencamos como de nosso interesse  e realizados em 2020, fizemos uma análise de distribuição por ano e observamos uma pequena variação dos dados em relação ao ano anterior, com exceção do ano de 2018 que mostrou uma variação de 18.4% em relação aos dois anos anteriores. Porém, em 2019 não houve variação expressiva, assim como também não observamos variação em 2020.
+Para verificar se a Covid-19 impactou na quantidade dos procedimentos que elencamos como de nosso interesse  e realizados em 2020, fizemos uma análise de distribuição por ano e observamos uma pequena variação dos dados em relação ao ano anterior, com exceção do ano de 2018 que mostrou uma variação de 18.4% em relação aos dois anos anteriores. Porém, em 2019 não houve variação expressiva, assim como também não observamos variação em 2020 (Tabela 3).
 
-
-
-|Ano|Qtd.|% de Variação|
+**Tabela 3 - Variação na frequência de procedimentos
+|Ano|Quantidade.|% de Variação|
 |--|--|--|
-|2016|656882|0 %|
-|2017|637126|-3,007|
-|2018|754606|18,439 %|
-|2019|790968|4,819 %|
-|2020|779058|-1,506 %|
+|2016|656.882|0|
+|2017|637.126|-3,007|
+|2018|754.606|18,439|
+|2019|790.968|4,819|
+|2020|779.058|-1,506|
 
 ![Figura 3](./assets/images/Fig3.png)
+
 
 
 Ao analisar os dados de estadiamento (AQ_ESTADI), predominou o estadiamento II, que é considerado um estadiamento menos grave que o estadiamento IV. Como selecionamos códigos de procedimentos relacionados à doença não metastática, era esperado que não constasse em nosso banco de dados mulheres com estádio IV, porém há o registro de procedimentos para mulheres com estádio IV em nosso banco. 
@@ -167,7 +167,7 @@ a. O estado do Acre teve uma queda acima de 50% na quantidade de procedimentos e
 ![Figura 5](./assets/images/Fig5.png)
 
 
-b. Os estados do Alagoas, Amazonas, Bahia, Ceará, Distrito Federal, Espírito Santo, Goiás, Maranhão, Minas Gerais, Mato Grosso do Sul, Mato Grosso, Pará, Paraíba, Pernambuco, Piauí, Paraná, Rio de Janeiro, Rio Grande do Norte, Rondônia, Rio Grande do Sul, Santa Catarina, Sergipe, São Paulo,  parecem não ter afetado os procedimentos (redução em torno de 10% ou aumento na produção);
+b. Os estados do Alagoas, Amazonas, Bahia, Ceará, Distrito Federal, Espírito Santo, Goiás, Maranhão, Minas Gerais, Mato Grosso do Sul, Mato Grosso, Pará, Paraíba, Pernambuco, Piauí, Paraná, Rio de Janeiro, Rio Grande do Norte, Rondônia, Rio Grande do Sul, Santa Catarina, Sergipe, São Paulo,  parecem não ter afetado os procedimentos (redução em torno de 10% ou aumento na produção). Esta percepção se confirmou ao aplicarmos o teste qui-quadrado.
 
 
 ![Figura 6](./assets/images/Fig6.png)
@@ -178,7 +178,7 @@ b. Os estados do Alagoas, Amazonas, Bahia, Ceará, Distrito Federal, Espírito S
 ![Figura 11](./assets/images/Fig11.png)
 
  
-c. O estado do Amapá apresentou uma redução no número de procedimentos, porém esta tendência já vinha do ano anterior, então não faremos inicialmente uma correlação com a pandemia. Reservamos este dado para análise posterior;
+c. O estado do Amapá apresentou uma redução no número de procedimentos, porém esta tendência já vinha do ano anterior.
 
 ![Figura 12](./assets/images/Fig12.png)
 
@@ -222,7 +222,7 @@ As variáveis não selecionadas foram excluídas e o filtros foram aplicados a f
 
 ![Figura 20](./assets/images/Fig20.png)
 
-Procuramos entender esta ausência de dados e verificamos que em 2019 foi publicada a Portaria nº 263/2019, que atualiza a tabela de procedimentos radioterápicos do SUS e cria o código de radioterapia de mama utilizado. Uma alternativa para contornar esta ausência é aplicar o filtro utilizando o CID 50, o que ainda será testado. No entanto, é preciso considerar que ao selecionar o CID 50, não é possível diferenciar o câncer metastático do não metastático, portanto não é possível dar uma resposta de acordo com a pergunta de pesquisa inicial que incluiu apenas pacientes com câncer não metastático.
+Procuramos entender esta ausência de dados e verificamos que em 2019 foi publicada a Portaria nº 263/2019, que atualiza a tabela de procedimentos radioterápicos do SUS e cria o código de radioterapia de mama utilizado. Uma alternativa para contornar esta ausência seria aplicar o filtro utilizando o CID 50. No entanto, é preciso considerar que ao selecionar o CID 50, não é possível diferenciar o câncer metastático do não metastático, portanto não é possível dar uma resposta de acordo com a pergunta de pesquisa inicial que incluiu apenas pacientes com câncer não metastático, por este motivo, trabalhamos somente com os dados de 2019-2020.
 
 
 ***Integrador RHC:***
@@ -240,7 +240,7 @@ A seguir é possível verificar uma visão geral do número de casos novos e de 
 
 ![Figura 22](./assets/images/Fig22.png)
 
-Analisamos a variação do número de casos novos por mês por estado, e após, por região (Norte, Nordeste, Centro Oeste, Sul, Sudeste). De maneira geral, as distribuições são parecidas, no entanto ainda não analisamos a proporção em relação ao tamanho da população do estado específico. Esta é uma variável disponível no banco de dados e esta análise ainda será realizada, a fim de identificar os estados mais impactados pela pandemia.  
+Analisamos a variação do número de casos novos por mês por estado, e após, por região (Norte, Nordeste, Centro Oeste, Sul, Sudeste). Como não observamos diferença estatística entre o valor consolidade de procedimentos, concluímos que não seria necessário aplicar um teste de correlação com esses dados.
 
 
 Após essa avaliação geral, destacamos:
@@ -274,17 +274,13 @@ Após essa avaliação geral, destacamos:
 | Orange | [*Orange Data Mining*](https://orangedatamining.com/) | É uma ferramenta open source de visualização de dados, aprendizado de máquina e mineração de dados. | 
 
 
-# Cronograma
+# Conclusão
+Com base nos dados analisados, concluímos que o volume de procedimentos para o tratamento do câncer de mama não foi afetado pela pandemia de Covid-19. Tal conclusão precisa ser lida com cautela, uma vez que houve a exclusão de uma parcela de informações por missing data no bando de quimioterapia. Do mesmo modo, no banco de radioterapia trabalhamos somente com dados de 2019 em relação a 2020, de modo que não é possível afirmar se houve ou não uma tendência de redução em 2020.
+Por uma dificuldade em relação ao banco de dados de cirurgia, não foi possível analisá-los. Sabe-se que os hospitais ficaram sobrecarregados por conta da pandemia e que cirurgias eletivas foram canceladas. Com base nessas informações da mídia televisiva, supomos que este pode ter sido o procedimento afetado com a pandemia.
 
-| Atividades | 1ª Semana 05/04 | 2ª Semana 11/04 | 3ª Semana 18/04 | 4ª Semana 25/04 | 5ª Semana 02/05 | 6ª Semana 09/05 | 7ª Semana 16/05 | 8ª Semana 23/05 |
-|--|--|--|--|--|--|--|--|--|
-Definição do Projeto            |X|X| | | | | | |
-Analise da Base de Dados        | |X|X| | | | | | 
-Tratamento da Base de Dados     | |X|X|X| | | | |
-Definição de Modelos e métricas | | |X|X|X|X| | |
-Validação de Modelos            | | | |X|X|X|X| |
-Análise dos Resultados          | | | | | |X|X| |
-Conclusão                       | | | | | |X|X|X|
+# Trabalhos Futuros
+
+Uma maior experiência com os bancos de dados gerados no DATASUS nos permitiria, talvez, uma melhor manipulação dos dados referentes à cirurgia e assim proceder à análise inicialmente proposta.
 
 
 
