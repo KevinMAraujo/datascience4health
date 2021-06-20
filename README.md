@@ -10,7 +10,7 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 | ------ | ----- | -------------- |
 | Annemeri Livinalli | 226976 | Saúde |
 | Kevin Martins Araújo | 223971 | Computação |
-| Luísa Von Zuben Veçoso | 156457 | Saúde |
+| Luísa von Zuben Veçoso | 156457 | Saúde |
 | Rafael Duarte Paes | 224242 | Saúde |
 
 # Descrição Resumida do Projeto
