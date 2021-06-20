@@ -141,7 +141,7 @@ Os cinco estados com maior volume de procedimentos (Fig 2) estão na região Sul
 
 Para verificar se a Covid-19 impactou na quantidade dos procedimentos que elencamos como de nosso interesse  e realizados em 2020, fizemos uma análise de distribuição por ano e observamos uma pequena variação dos dados em relação ao ano anterior, com exceção do ano de 2018 que mostrou uma variação de 18.4% em relação aos dois anos anteriores. Porém, em 2019 não houve variação expressiva, assim como também não observamos variação em 2020 (Tabela 3).
 
-**Tabela 3 - Variação na frequência de procedimentos
+**Tabela 3 - Variação na frequência de procedimentos**
 |Ano|Quantidade.|% de Variação|
 |--|--|--|
 |2016|656.882|0|
