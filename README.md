@@ -51,6 +51,7 @@ O estudo foi conduzido com base no modelo de processo *Knowledge Discovery in Da
 | Base de Dados | Localização | Descrição |
 |--|--|--|
 | Observatório de oncologia | [*Observatório de Oncologia*](http://observatoriodeoncologia.com.br/tratamento-do-cancer-de-mama-no-sus/) | plataforma online de monitoramento de dados abertos |
+| SIH/SUS | [*DATASUS/SIHSUS*](http://www2.datasus.gov.br/DATASUS/index.php?area=0202&id=11633) | Arquivos com informações de cirurgias. |
 
 Esta base foi consultada para verificação dos dados de número de casos de câncer de mama. Não se trata de uma base geradora de banco, por essa razão não a utilizamos.
 
@@ -62,7 +63,6 @@ Utilizamos as bases de dados fornecido pelo DATASUS, o integrador de Registros H
 | Base de Dados | Localização | Descrição |
 |--|--|--|
 | SIASUS | [*DATASUS/SIASUS*](http://www2.datasus.gov.br/DATASUS/index.php?area=0901&item=1&acao=22&pad=31655) | Arquivos com informações referente aos atendimentos ambulatoriais. |
-| SIH/SUS | [*DATASUS/SIHSUS*](http://www2.datasus.gov.br/DATASUS/index.php?area=0202&id=11633) | Arquivos com informações de cirurgias. |
 |COVID-19 | [*CoronavírusBrasil*](https://covid.saude.gov.br/) | Site com painel interativo com dados da Covid-19 informados pelo Ministério da Saúde|
 |Integrador RHC|[*Integrador RHC*](https://irhc.inca.gov.br/RHCNet/)|sistema desenvolvido pelo INCA para consolidação de dados hospitalares provenientes dos Registros Hospitalares de Câncer de todo o Brasil.|
 
