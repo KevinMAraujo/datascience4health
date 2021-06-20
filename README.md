@@ -34,7 +34,7 @@ Com base nas diretrizes diagnósticas e terapêuticas do carcinoma de mama, cons
 
 O número de casos acumulados de Covid-19 por região foi obtido na plataforma [*CoronavírusBrasil*](https://covid.saude.gov.br/).
 
-Em relação ao câncer, consideramos as seguintes variáveis categóricas: localização geográfica (região de tratamento), tipo de tratamento, e numéricas: idade. Em relação à Covid-19 consideramos as mesmas variáveis, exceto o tipo de tratamento.
+Em relação ao câncer, consideramos as seguintes variáveis categóricas: localização geográfica (região de tratamento), tipo de tratamento; e numéricas: idade. Em relação à Covid-19 consideramos as mesmas variáveis, exceto o tipo de tratamento.
 
 A frequência de cada conjunto de procedimentos (quimioterapia e radioterapia) está descrita como média, por ano e região. Considerando que as variáveis assumirão uma distribuição normal, afim de comparar as proporções e distribuições dos procedimentos entre cada ano, aplicamos o teste de hipótese qui-quadrado com as seguintes hipóteses:
 H0: 2016 = 2017 = 2018 = 2019 = 2020
@@ -44,7 +44,7 @@ Adotamos P < 0.05.
 
 Os dados foram organizados e apresentados em tabelas de frequências e gráficos.
 
-O estudo foi conduzido com base no modelo de processo *Knowledge Discovery in Databases* (KDD) e suas respectivas etapas descritas por Fayyad e col [8]. Fizemos a seleção das bases de dados para uso, pré-processamos, e tratamos, com o objetivo de entender os dados obtidos, remover dados errados, nulos, irrelevantes ou considerados como outliers. Para a manipulação, cruzamento e análise das bases de dados utilizamos a linguagem de programação Python, e em alguns momentos utilizamos o programa Jupyter Notebook para auxiliar no desenvolvimento dos códigos. Também será utilizado a ferramenta Orange3 Data Mining e WEKA, que são ferramentas que auxiliam na análise e mineração dos dados.
+O estudo foi conduzido com base no modelo de processo *Knowledge Discovery in Databases* (KDD) e suas respectivas etapas descritas por Fayyad e col [8]. Fizemos a seleção das bases de dados para uso, pré-processamos, e tratamos, com o objetivo de entender os dados obtidos, remover dados errados, nulos, irrelevantes ou considerados como outliers. Para a manipulação, cruzamento e análise das bases de dados utilizamos a linguagem de programação Python, e em alguns momentos utilizamos o programa Jupyter Notebook para auxiliar no desenvolvimento dos códigos. Também será utilizada a ferramenta Orange3 Data Mining e WEKA, que são ferramentas que auxiliam na análise e mineração dos dados.
 
 ## Bases de Dados e Evolução
 ### Bases Estudadas mas Não Adotadas
@@ -83,7 +83,7 @@ Os arquivos de APAC são compostos conforme o tipo de laudo (tipo de atendimento
 
 A base de dados da APAC de Quimioterapia possui 63 variáveis, que são definidas e explicadas pela documentação oficial do DATASUS referente ao SIASUS (Informe Técnico 2016-03). Para análise, elencamos 7 variáveis do banco: idade, se a APAC era inicial ou continuidade, CID principal, estadiamento da doença, esquema do tratamento, estado, e data de solicitação. Estas variáveis auxiliaram na certeza de que estávamos com dados da população que elegemos para o estudo.
  
-Com as variáveis definidas, iniciamos o processo de extração, tratamento e carga dos dados. Os arquivos fornecidos pelo DATASUS possuem um arquivo de extensão ‘dbc’. Esse tipo de extensão é lido pelo programa Tabwin que é fornecido pelo próprio DATASUS. Utilizando o Tabwin realizamos as leituras dos arquivos dbc dos anos de  2016 a 2020, e realizamos a expansão dos dados para um arquivo no formato ‘dbf’. A partir dos arquivos ‘dbf’ realizamos a extração e conversão dos dados contidos, utilizando código em Python. Como o foco do trabalho é analisar o cancer em pessoas do sexo feminino, no momento da extração dos dados para um arquivo excel foi realizado um filtro onde apenas os registros relacionados ao sexo feminino foi extraido.
+Com as variáveis definidas, iniciamos o processo de extração, tratamento e carga dos dados. Os arquivos fornecidos pelo DATASUS possuem um arquivo de extensão ‘dbc’. Esse tipo de extensão é lido pelo programa Tabwin que é fornecido pelo próprio DATASUS. Utilizando o Tabwin realizamos as leituras dos arquivos dbc dos anos de  2016 a 2020, e realizamos a expansão dos dados para um arquivo no formato ‘dbf’. A partir dos arquivos ‘dbf’ realizamos a extração e conversão dos dados contidos, utilizando código em Python. Como o foco do trabalho é analisar o câncer em pessoas do sexo feminino, no momento da extração dos dados para um arquivo excel foi realizado um filtro onde apenas os registros relacionados ao sexo feminino foram extraídos.
 
 Neste primeiro processo de ETL, foi obtido um arquivo em excel com aproximadamente 17 milhões de regitros (17.026.164) do sexo masculino e feminino, ao selecionar apenas os dados do sexo feminino e restringir os procedimentos que são aplicados ao nosso problema (AP_PRIPAL), obtivemos uma base de dados com quase 11 milhões de registros (10.904.294 registros).
 
@@ -104,7 +104,7 @@ Desta forma, conseguimos identificar que a base de dados possui cerca de 53,23 %
 
 A partir dessa tabela podemos notar que a maioria dos registros estão na faixa etária 40 a 79 anos, informação que coincide com dados da literatura que apontam maior incidência na população idosa, a partir dos 60 anos, seguido pela faixa etária entre 40 e 59 anos.
 
-Também análisamos os registros das pacientes com menos de 60 anos e acima dos 60 anos por estado. Porém, para que isso fosse possível foi necessário converter a variável AP_UFMUN para o valor da unidade da federação (UF). Essa variável possui 6 números, onde os dois primeiros são referentes ao código da unidade da federação. Os códigos de cada estado foram obtidos pela página do Instituto Brasileiro de Geografia e Estatística (IBGE). Com a conversão da variável AP_UFMUN para a UF, foi criado a variável “ESTADO_UF”, onde foi armazenado a UF de cada registro. Com esse tratamento, foi realizada a análise da distribuição dos dados abaixo e acima de 60 entre os estados, como pode ser visto na figura 1 .
+Também análisamos os registros das pacientes com menos de 60 anos e acima dos 60 anos por estado. Porém, para que isso fosse possível foi necessário converter a variável AP_UFMUN para o valor da unidade da federação (UF). Essa variável possui 6 números, onde os dois primeiros são referentes ao código da unidade da federação. Os códigos de cada estado foram obtidos pela página do Instituto Brasileiro de Geografia e Estatística (IBGE). Com a conversão da variável AP_UFMUN para a UF, foi criada a variável “ESTADO_UF”, onde foi armazenada a UF de cada registro. Com esse tratamento, foi realizada a análise da distribuição dos dados abaixo e acima de 60 entre os estados, como pode ser visto na figura 1 .
 
 
 ![Figura 1](./assets/images/Fig1.png)
@@ -210,7 +210,7 @@ A variável AP_PRIPAL fornece o código do procedimento realizado. Os códigos s
 
 Para analisar apenas a população de interesse, utilizamos as variáveis AP_NUIDADE (idade) e AP_SEXO (sexo), para permitir identificar as pacientes do sexo feminino e com mais de 60 anos.
 
-Variáveis que fornecem maiores detalhes sobre a doença foram incluídas, a fim de permitir explorar diferenças das variações de tratamento de acordo com o estadiamento (AR_ESTADI) e finalidade (AR_FINALI).
+Variáveis que fornecem maiores detalhes sobre a doença foram incluídas, a fim de permitir explorar possíveis diferenças das variações de tratamento de acordo com o estadiamento (AR_ESTADI) e finalidade (AR_FINALI), caso essas diferenças fossem identificadas na análise exploratória.
 
 O CID (Classificação Internacional de Doenças) dado pela variável AP_CIDPRI também foi incluído, como uma segunda fonte para identificar a doença. O CID para câncer de mama é o 50.0.
 
@@ -218,11 +218,12 @@ A variável AP_TPAPAC indica se a APAC é inicial, de continuidade ou única. Es
 
 As demais variáveis não foram selecionadas pois não seriam relevantes dentro do objetivo do projeto. Desta forma, não foram incluídas variáveis como o número e valor da APAC, e variáveis relacionadas a dados do estabelecimento que realizou o procedimento, dados sociodemográficos e endereço do paciente.
 
-As variáveis não selecionadas foram excluídas e o filtros foram aplicados a fim de selecionar a população de interesse do projeto: sexo feminino, ⩾ 60 anos, e código de procedimento de radioterapia de mama (304010413). Os resultados obtidos com os filtros corresponderam a 7% do banco de dados. No entanto, nas primeiras análises verificamos que não haviam registros para anos anteriores a 2019, conforme é possível visualizar no gráfico abaixo (⩾ 60 anos, sexo feminino, por ano).
+As variáveis não selecionadas foram excluídas e o filtros foram aplicados a fim de selecionar a população de interesse do projeto: sexo feminino, ⩾ 60 anos, e código de procedimento de radioterapia de mama (304010413). Os resultados obtidos com os filtros corresponderam a 7% do banco de dados. No entanto, nas primeiras análises verificamos que não haviam registros para anos anteriores a 2019, conforme é possível visualizar na figura 20 (⩾ 60 anos, sexo feminino, por ano).
 
 ![Figura 20](./assets/images/Fig20.png)
 
-Procuramos entender esta ausência de dados e verificamos que em 2019 foi publicada a Portaria nº 263/2019, que atualiza a tabela de procedimentos radioterápicos do SUS e cria o código de radioterapia de mama utilizado. Uma alternativa para contornar esta ausência seria aplicar o filtro utilizando o CID 50, no entanto, não seria possível diferenciar o câncer metastático do não metastático. Como a pergunta de pesquisa inicial incluiu apenas pacientes com câncer não metastático, a fim de respondê-la trabalhamos somente com os dados de 2019-2020.
+Procuramos entender esta ausência de dados e verificamos que em 2019 foi publicada a Portaria nº 263/2019, que atualiza a tabela de procedimentos radioterápicos do SUS e cria o código de radioterapia de mama utilizado. Uma alternativa para contornar esta ausência seria aplicar o filtro na variável AP_CIDPRI utilizando o CID 50 em substituição ao código do procedimento, no entanto, esse filtro não permitiria diferenciar o câncer metastático do não metastático já que o CID 50 é válido para ambos. Como a pergunta de pesquisa inicial incluiu apenas pacientes com câncer não metastático, a fim de respondê-la trabalhamos somente com os dados de 2019 e 2020.
+
 
 
 
