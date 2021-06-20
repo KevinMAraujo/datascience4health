@@ -245,7 +245,7 @@ Analisamos a variação do número de casos novos por mês por estado, e após, 
 
 Após essa avaliação geral, destacamos:
 
-* A região Norte alcançou o pico de novos casos mais precocemente que outras regiões do país, , em junho de 2020. 
+* A região Norte alcançou o pico de novos casos mais precocemente que outras regiões do país em junho de 2020. 
 ![Figura 23](./assets/images/Fig23.png)
 
 * A região Sul mostrou ser a região a mais tardiamente atingir o pico de casos novos, ocorrendo em agosto de 2020. 
@@ -262,6 +262,20 @@ Após essa avaliação geral, destacamos:
 
 ![Figura 27](./assets/images/Fig27.png)
 
+*** Resumo das análises ***
+
+Com a conclusão da análise exploratórias dos dados, foi iniciado uma analise das registros de cada ano mês a mês, mas com o objetivo de visualizar os desempenho dos dados anos e os dados de registros de COVID-19 mês a mês.
+No primeiro momento foram gerados gráficos de barras de todos os anos de cada um dos grupos de dados (quimioterapia, radioterapia, covid) com o objetivo de ser possível idenficar alguma variação entre os mês e entre os anos. A imagem a abaixo apresenta os dados da quimioterapia.
+
+![Figura 28](./assets/images/Fig28.png)
+
+Analisando os dados da quimioterapia é possivel identificar que há um aumento no números registros em cada ano em relação ao ano anterior, porém não foi possivel identificar um padrão entre os registros mensais. Um ponto interessante que foi possível idenfiticar foi que os meses de janeiro, abril, julho e outubro apresentam valores mais alto que os dois meses anteriores a cada um deles. Esse padrão só não ocorre em 2017, e não foi possivel encontrar nenhum documento que pudesse explicar o motivo do ano de 2017 possuir um desempenho diferente dos demais. Após a analise mensal, foi realizado a analise anual dos dados de quimioterapia, que é apresentada na figura abaixo.
+
+![Figura 29](./assets/images/Fig29.png)
+
+
+
+# Análises Realizadas
 
 # Ferramentas
 | Ferramenta | Endereço na Web | Descrição
