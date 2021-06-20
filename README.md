@@ -222,7 +222,8 @@ As variáveis não selecionadas foram excluídas e o filtros foram aplicados a f
 
 ![Figura 20](./assets/images/Fig20.png)
 
-Procuramos entender esta ausência de dados e verificamos que em 2019 foi publicada a Portaria nº 263/2019, que atualiza a tabela de procedimentos radioterápicos do SUS e cria o código de radioterapia de mama utilizado. Uma alternativa para contornar esta ausência seria aplicar o filtro utilizando o CID 50. No entanto, é preciso considerar que ao selecionar o CID 50, não é possível diferenciar o câncer metastático do não metastático, portanto não é possível dar uma resposta de acordo com a pergunta de pesquisa inicial que incluiu apenas pacientes com câncer não metastático, por este motivo, trabalhamos somente com os dados de 2019-2020.
+Procuramos entender esta ausência de dados e verificamos que em 2019 foi publicada a Portaria nº 263/2019, que atualiza a tabela de procedimentos radioterápicos do SUS e cria o código de radioterapia de mama utilizado. Uma alternativa para contornar esta ausência seria aplicar o filtro utilizando o CID 50, no entanto, não seria possível diferenciar o câncer metastático do não metastático. Como a pergunta de pesquisa inicial incluiu apenas pacientes com câncer não metastático, a fim de respondê-la trabalhamos somente com os dados de 2019-2020.
+
 
 
 ***Integrador RHC:***
@@ -289,7 +290,7 @@ Analisando os dados da quimioterapia é possivel identificar que há um aumento 
 
 
 # Conclusão
-Com base nos dados analisados, concluímos que o volume de procedimentos para o tratamento do câncer de mama não foi afetado pela pandemia de Covid-19. Tal conclusão precisa ser lida com cautela, uma vez que houve a exclusão de uma parcela de informações por missing data no bando de quimioterapia. Do mesmo modo, no banco de radioterapia trabalhamos somente com dados de 2019 em relação a 2020, de modo que não é possível afirmar se houve ou não uma tendência de redução em 2020.
+Com base nos dados analisados, concluímos que o volume de procedimentos para o tratamento do câncer de mama não foi afetado pela pandemia de Covid-19. Tal conclusão precisa ser lida com cautela, uma vez que houve a exclusão de uma parcela de informações por missing data no banco de quimioterapia. Do mesmo modo, no banco de radioterapia trabalhamos somente com dados de 2019 em relação a 2020, de modo que não é possível afirmar se houve ou não uma tendência de redução em 2020.
 Por uma dificuldade em relação ao banco de dados de cirurgia, não foi possível analisá-los. Sabe-se que os hospitais ficaram sobrecarregados por conta da pandemia e que cirurgias eletivas foram canceladas. Com base nessas informações da mídia televisiva, supomos que este pode ter sido o procedimento afetado com a pandemia.
 
 # Trabalhos Futuros
