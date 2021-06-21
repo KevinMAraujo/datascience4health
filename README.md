@@ -304,7 +304,8 @@ O objetivo do projeto é identificar se os casos de COVID-19 no ano de 2020 infl
 ![Figura 34](./assets/images/Fig34.png)
 
 A figura acima apresenta o número de registros mês a mês de cada um dos grupos analisados no ano de 2020. O objetivo da figura é facilitar a visualização e comparação dos números de registros mês a mês de cada um dos grupos de dados analisados.  
-Após realizada as análises apresentadas foi realizado a utilização de teste de hipóteses para verificar se a variação ocorrida em 2020 nos dados de quimioterapia e de radioterapia tem relação com os dados da COVID-19. Aplicamos o teste de hipótese qui-quadrado com as seguintes hipóteses: H0: 2016 = 2017 = 2018 = 2019 = 2020 H1: 2016 ≠ 2017 ≠ 2018 ≠ 2019 ≠ 2020. Adotamos P < 0.05. O teste qui-quadrado foi o escolhido para ser aplicado no projeto devido este ser considerado um teste não paramétrico, o que significa que ele não depende de parâmetros de média e variância, e permite que seja verificada hipóteses que possuem como objetivo analisar as divergências entre a frequências dos dados. Código utilizado para calcular o qui-quadrado é apresentado abaixo:
+
+Após realizada as análises apresentadas foi realizado a utilização de teste de hipóteses para verificar se a variação ocorrida em 2020 nos dados de quimioterapia e de radioterapia tem relação com os dados da COVID-19. Iniciando pela analise dos dados de quimioterapia, aplicamos o teste de hipótese qui-quadrado com as seguintes hipóteses: H0: 2016 = 2017 = 2018 = 2019 = 2020 H1: 2016 ≠ 2017 ≠ 2018 ≠ 2019 ≠ 2020. Adotamos P < 0.05. O teste qui-quadrado foi o escolhido para ser aplicado no projeto devido este ser considerado um teste não paramétrico, o que significa que ele não depende de parâmetros de média e variância, e permite que seja verificada hipóteses que possuem como objetivo analisar as divergências entre a frequências dos dados. Código utilizado para calcular o qui-quadrado é apresentado abaixo:
 
 ~~~python
 def qui_quadrado(obs, exp):
@@ -321,10 +322,9 @@ qui_quadrado(observed, expected)
 
 ~~~
 
-O cálculo do qui-quadrado (X2) foi aplicado com um grau de significação de 95%, e um grau de liberdade igual 4. O Valor do X2 calculado obtido foi de 28.332. Com base na grau de liberdade e no nível de significância (95%), o valor de X2 tabelado é 9,488. O X2 calculado é maior ou igual ao X2 tabelado, desta forma temos que rejeitar a hipótese nula. Logo os valores de registros de cada ano são diferentes, e o ano de 2019 foi o ano com o maior número de registros e o ano de 2017 o com menor número de registros.  
+O cálculo do qui-quadrado (X2) foi aplicado com um grau de significancia de 95%, e um grau de liberdade igual 4. O Valor do X2 calculado obtido foi de 28.332. Com base na grau de liberdade e no nível de significância (95%), o valor de X2 tabelado é 9,488. O X2 calculado é maior ou igual ao X2 tabelado, desta forma temos que rejeitar a hipótese nula. Logo os valores de registros de cada ano são diferentes, e o ano de 2019 foi o ano com o maior número de registros e o ano de 2017 o com menor número de registros.  
 
-
-
+Os dados de radioterapia possuem apenas duas classes, e por isso não é possivel aplicar o teste do qui-quadrado utilizando apenas os dados de radioterapia. Desta forma, iremos utilizar os dados da radioterapia dos anos de 2019 e 2020 junto com os dados de quimioterapia dos anos de 2019 e 2020.
 
 # Ferramentas
 | Ferramenta | Endereço na Web | Descrição
