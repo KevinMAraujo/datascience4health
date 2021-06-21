@@ -265,9 +265,9 @@ Após essa avaliação geral, destacamos:
 
 ![Figura 27](./assets/images/Fig27.png)
 
-***Resumo das análises***
 
-Com a conclusão da análise exploratórias dos dados, foi iniciado uma analise das registros de cada ano mês a mês, mas com o objetivo de visualizar os desempenho dos dados anos e os dados de registros de COVID-19 mês a mês.
+# Análises Realizadas
+Com a conclusão da análise exploratórias dos dados foi iniciado uma analise das registros de cada ano mês a mês, mas com o objetivo de visualizar os desempenho dos dados anos e os dados de registros de COVID-19 mês a mês. Após as analise exploratórias identificamos que as demais variaveis existentes nas bases de dados não serão utilizados no projeto.
 No primeiro momento foram gerados gráficos de barras de todos os anos de cada um dos grupos de dados (quimioterapia, radioterapia, covid) com o objetivo de ser possível idenficar alguma variação entre os mês e entre os anos. A imagem a abaixo apresenta os dados da quimioterapia.
 
 ![Figura 28](./assets/images/Fig28.png)
@@ -276,9 +276,24 @@ Analisando os dados da quimioterapia é possivel identificar que há um aumento 
 
 ![Figura 29](./assets/images/Fig29.png)
 
+Com base na figura acima é possivel visualizar a variação do número de registros de quimioterapia entre os anos de 2016 e 2020. Em 2017 podemos ver que houve uma queda dos números de registros em relação ao ano de 2016, isso não ocorre nos de 2018 e 2019, nesses anos há um aumento do número de registros em relação aos anos anteriores. O ano de 2020 apresenta uma pequena queda em relação ao ano de 2019.
 
+As mesmas analises realizadas com os dados de quimioterapia foram realizadas nos dados de radioterapia, porém a quantidade de registros de radioterapia é bem menor que os dados de quimioterapia, e por isso só foi possivel obter os dados de radioterapia dos anos de 2019 e 2020. A figura abaixo apresenta o número de dados de radioterapia por meses nos anos de 2019 e 2020.
 
-# Análises Realizadas
+![Figura 30](./assets/images/Fig30.png)
+
+A partir da figura acima foi possivel visualizar a variação do número de registros nos anos 2019 e 2020. No mês de fevereiro do ano de 2019 não houve nenhum registros de radioterapia, porém não foi possível identificação nenhum documentação que justificasse ou que explicasse o que pode ter ocorrido nesse mês. Pode ter havido uma troca na forma de coleta dos dados, mas isso não foi possivel afimar com base nos documentos encontrados no site do Datasus. É possivel notar que os meses de janeiro até abril de 2019 houve um número muito pequeno de registros, isso reforça a hipoteses que houve uma troca na forma de coletada dados nos primeiros meses de 2019.
+
+Em nennhum dos anos foi possivel identificar nenhum padrão no número de casos, porém é possivel notar que houve um aumento no numero de registros no ano de 2019 para o ano de 2020. A figura abaixo apresenta os números de registros de radioterapia em cada ano.
+
+![Figura 31](./assets/images/Fig31.png)
+
+Com base do gráfico da figura acima é possivel visualizar que houve uma alteração consideravel na quantidade de registros do ano, porém temos que levar em consideração os meses de janeiro a abril de 2019 que não tiveram muitos registros. Partindo desse ponto, a figura abaixo apresenta os dados apenas dos meses de maio a dezembro dos anos de 2019 e 2020.
+
+![Figura 31](./assets/images/Fig31.png)
+
+Removendo os meses de janeiro a abril dos anos de 2019 e 2020 é possivel notar que o número de registros de radioterapia é bem semelhante entre os dois anos. O ano de 2020 apresentou um valor um pouco maior que o ano anterior, mas não muito acima.
+
 
 # Ferramentas
 | Ferramenta | Endereço na Web | Descrição
