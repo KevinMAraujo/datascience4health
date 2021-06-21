@@ -292,7 +292,23 @@ Com base do gráfico da figura acima é possivel visualizar que houve uma altera
 
 ![Figura 32](./assets/images/Fig32.png)
 
-Removendo os meses de janeiro a abril dos anos de 2019 e 2020 é possivel notar que o número de registros de radioterapia é bem semelhante entre os dois anos. O ano de 2020 apresentou um valor um pouco maior que o ano anterior, mas não muito acima.
+Removendo os meses de janeiro a abril dos anos de 2019 e 2020 é possivel notar que o número de registros de radioterapia é bem semelhante entre os dois anos. Sem os anos meses de janeiro a abril o ano de 2020 7.420 registros, já o ano de 2019 teve 7.295 registros. O ano de 2020 apresentou um valor um pouco maior que o ano anterior, mas não muito acima.
+
+Com base nos dados obtidos até o momento foi iniciado a analise dos dados do número de casos de COVID-19 em 2020. Os primeiros registros de COVID-19 no Brasil começaram a ser identificados em fevereiro de 2020. A figura abaixo apresenta a variação do número de casos mês a mês no ano de 2020.
+
+![Figura 33](./assets/images/Fig33.png)
+
+Na figura é possivel visualizar a variação dos casos de COVID-19 em 2020, não foi possivel identificar um padrão nos dados apenas com esse gráfico, mas é possivel visualizar que os meses de julho e dezembro tiveram uma alta significativa no número de casos de COVID-19 em relação aos meses anteriores.
+
+O objetivo do projeto é identificar se os casos de COVID-19 no ano de 2020 influenciaram o numero de registros de quimioterapia e de radioterapia, e na busca de encontrar padrões visiveis de variações nos dados coletados entre si no ano de 2020 foi gerado a figura abaixo.
+
+![Figura 34](./assets/images/Fig34.png)
+
+A figura acima apresenta os número de registros mês a mês de cada um dos grupos analisados no ano de 2020. O objetivo era verificar ser seria possível identificar uma variação no número de registros no ano de 2020 nos dados de quimioterapia e de radioterapia nos meses onde os registros de COVID-19 tivessem aumento. Isso não é possivel identificar com base apenas nos gráficos apresentados nessa figura.
+
+
+
+
 
 
 # Ferramentas
