@@ -304,12 +304,14 @@ O objetivo do projeto é identificar se os casos de COVID-19 no ano de 2020 infl
 ![Figura 34](./assets/images/Fig34.png)
 
 A figura acima apresenta o número de registros mês a mês de cada um dos grupos analisados no ano de 2020. O objetivo da figura é facilitar a visualização e comparação dos números de registros mês a mês de cada um dos grupos de dados analisados.  
-Após realizada as análises apresentadas foi realizado a utilização de teste de hipóteses para verificar se a variação ocorrida em 2020 nos dados de quimioterapia e de radioterapia tem relação com os dados da COVID-19. Aplicamos o teste de hipótese qui-quadrado com as seguintes hipóteses: H0: 2016 = 2017 = 2018 = 2019 = 2020 H1: 2016 ≠ 2017 ≠ 2018 ≠ 2019 ≠ 2020. Adotamos P < 0.05. Para realização do cálculo do qui-quadrado foi utilizando a biblioteca Scipy.
+Após realizada as análises apresentadas foi realizado a utilização de teste de hipóteses para verificar se a variação ocorrida em 2020 nos dados de quimioterapia e de radioterapia tem relação com os dados da COVID-19. Aplicamos o teste de hipótese qui-quadrado com as seguintes hipóteses: H0: 2016 = 2017 = 2018 = 2019 = 2020 H1: 2016 ≠ 2017 ≠ 2018 ≠ 2019 ≠ 2020. Adotamos P < 0.05. Para realização do cálculo do qui-quadrado foi utilizando a biblioteca Scipy. O teste qui-quadrado foi o escolhido para ser aplicado no projeto devido este ser considerado um teste não paramétrico, o que significa que ele não depende de parâmetros de média e variância, e permite que seja verificada hipóteses que possuem como objetivo analisar as divergências entre a frequências dos dados. Código utilizado para calcular o qui-quadrado é apresentado abaixo:
 
 ~~~python
  from scipy.stats import chisquare;
  CHI, P_VALUE = chisquare([A_2016, A_2017, A_2018, A_2019, A_2020]);
 ~~~~
+
+
 
 # Ferramentas
 | Ferramenta | Endereço na Web | Descrição
