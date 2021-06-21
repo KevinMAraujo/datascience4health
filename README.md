@@ -324,7 +324,9 @@ qui_quadrado(observed, expected)
 
 O cálculo do qui-quadrado (X2) foi aplicado com um grau de significancia de 95%, e um grau de liberdade igual 4. O Valor do X2 calculado obtido foi de 28.332. Com base na grau de liberdade e no nível de significância (95%), o valor de X2 tabelado é 9,488. O X2 calculado é maior ou igual ao X2 tabelado, desta forma temos que rejeitar a hipótese nula. Logo os valores de registros de cada ano são diferentes, e o ano de 2019 foi o ano com o maior número de registros e o ano de 2017 o com menor número de registros.  
 
-Os dados de radioterapia possuem apenas duas classes, e por isso não é possivel aplicar o teste do qui-quadrado utilizando apenas os dados de radioterapia. Desta forma, iremos utilizar os dados da radioterapia dos anos de 2019 e 2020 junto com os dados de quimioterapia dos anos de 2019 e 2020.
+Os dados de radioterapia possuem apenas duas classes, e por isso não é possivel aplicar o teste do qui-quadrado utilizando os dados de radioterapia.
+
+
 
 # Ferramentas
 | Ferramenta | Endereço na Web | Descrição
