@@ -306,8 +306,11 @@ O objetivo do projeto é identificar se os casos de COVID-19 no ano de 2020 infl
 
 A figura acima apresenta os número de registros mês a mês de cada um dos grupos analisados no ano de 2020. O objetivo era verificar ser seria possível identificar uma variação no número de registros no ano de 2020 nos dados de quimioterapia e de radioterapia nos meses onde os registros de COVID-19 tivessem aumento. Isso não é possivel identificar com base apenas nos gráficos apresentados nessa figura.
 
+Após a realização da analise dos dados em uma visão de todo Brasil, foi realizada a analise dos dados mês a mês por estado.
 
+## Analise dos Dados por Estado
 
+O objetivo dessa analise é tentar identificar se houveram variações significativos dos números de registros em cada um dos estados do pais.
 
 
 
