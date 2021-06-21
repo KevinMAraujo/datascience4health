@@ -340,8 +340,8 @@ Os dados de radioterapia possuem apenas duas classes, e por isso não é possive
 
 
 # Conclusão
-Com base nos dados analisados, concluímos que o volume de procedimentos para o tratamento do câncer de mama não foi afetado pela pandemia de Covid-19. Tal conclusão precisa ser lida com cautela, uma vez que houve a exclusão de uma parcela de informações por missing data no banco de quimioterapia. Do mesmo modo, no banco de radioterapia trabalhamos somente com dados de 2019 em relação a 2020, de modo que não é possível afirmar se houve ou não uma tendência de redução em 2020.
-Por uma dificuldade em relação ao banco de dados de cirurgia, não foi possível analisá-los. Sabe-se que os hospitais ficaram sobrecarregados por conta da pandemia e que cirurgias eletivas foram canceladas. Com base nessas informações da mídia televisiva, supomos que este pode ter sido o procedimento afetado com a pandemia.
+Com base nos dados analisados e o resultado do cálculo do qui-quadrado com a rejeição da hipótese nula, concluímos que o volume de procedimentos para o tratamento do câncer de mama não foi afetado pela pandemia de Covid-19. Tal conclusão precisa ser lida com cautela, uma vez que foi aplicado um filtro por procedimentos metastaticos nos dados de quimioterapaia, e algumas variaveis possuíam poucos registros e/ou pouca variação nos dados. Do mesmo modo, no banco de radioterapia trabalhamos somente com dados de 2019 em relação a 2020, de modo que não é possível afirmar se houve ou não uma tendência de redução em 2020.
+Devido a grande quantidade de registros do banco de dados de cirurgia, não foi possível analisá-los em tempo hábil devido limites de recursos computacionais disponíveis no momento da realização do estudo. Sabe-se que os hospitais ficaram sobrecarregados por conta da pandemia e que cirurgias eletivas foram canceladas. Com base nessas informações da mídia televisiva, supomos que este pode ter sido o procedimento afetado com a pandemia.
 
 # Trabalhos Futuros
 
