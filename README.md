@@ -219,7 +219,7 @@ A variável AP_TPAPAC indica se a APAC é inicial, de continuidade ou única. Es
 
 As demais variáveis não foram selecionadas pois não seriam relevantes dentro do objetivo do projeto. Desta forma, não foram incluídas variáveis como o número e valor da APAC, e variáveis relacionadas a dados do estabelecimento que realizou o procedimento, dados sociodemográficos e endereço do paciente.
 
-As variáveis não selecionadas foram excluídas e o filtros foram aplicados a fim de selecionar a população de interesse do projeto: sexo feminino, ⩾ 60 anos, e código de procedimento de radioterapia de mama (304010413). Os resultados obtidos com os filtros corresponderam a 7% do banco de dados. No entanto, já nas primeiras análises verificamos que não haviam registros para anos anteriores a 2019, conforme é possível visualizar na figura abaixo (⩾ 60 anos, sexo feminino, por ano). 
+As variáveis não selecionadas foram excluídas e o filtros foram aplicados a fim de selecionar a população de interesse do projeto: sexo feminino, ⩾ 60 anos, e código de procedimento de radioterapia de mama (304010413). Os resultados obtidos com os filtros corresponderam a 7% do banco de dados. No entanto, já nas primeiras análises verificamos que não haviam registros para anos anteriores a 2019, conforme é possível visualizar na figura abaixo (⩾ 60 anos, sexo feminino, por ano). O mesmo foi observado para menos de 60 anos, confirmando que esta ausência não está relacionada ao filtro de idade.
 
 ![Figura 20](./assets/images/Fig20a.png)
 
@@ -265,7 +265,7 @@ Após essa avaliação geral, destacamos:
 
 ![Figura 27](./assets/images/Fig27.png)
 
-*** Resumo das análises ***
+***Resumo das análises***
 
 Com a conclusão da análise exploratórias dos dados, foi iniciado uma analise das registros de cada ano mês a mês, mas com o objetivo de visualizar os desempenho dos dados anos e os dados de registros de COVID-19 mês a mês.
 No primeiro momento foram gerados gráficos de barras de todos os anos de cada um dos grupos de dados (quimioterapia, radioterapia, covid) com o objetivo de ser possível idenficar alguma variação entre os mês e entre os anos. A imagem a abaixo apresenta os dados da quimioterapia.
