@@ -290,7 +290,7 @@ Em nennhum dos anos foi possivel identificar nenhum padrão no número de casos,
 
 Com base do gráfico da figura acima é possivel visualizar que houve uma alteração consideravel na quantidade de registros do ano, porém temos que levar em consideração os meses de janeiro a abril de 2019 que não tiveram muitos registros. Partindo desse ponto, a figura abaixo apresenta os dados apenas dos meses de maio a dezembro dos anos de 2019 e 2020.
 
-![Figura 31](./assets/images/Fig31.png)
+![Figura 32](./assets/images/Fig32.png)
 
 Removendo os meses de janeiro a abril dos anos de 2019 e 2020 é possivel notar que o número de registros de radioterapia é bem semelhante entre os dois anos. O ano de 2020 apresentou um valor um pouco maior que o ano anterior, mas não muito acima.
 
