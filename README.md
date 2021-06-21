@@ -306,7 +306,7 @@ O objetivo do projeto é identificar se os casos de COVID-19 no ano de 2020 infl
 
 A figura acima apresenta os número de registros mês a mês de cada um dos grupos analisados no ano de 2020. O objetivo era verificar ser seria possível identificar uma variação no número de registros no ano de 2020 nos dados de quimioterapia e de radioterapia nos meses onde os registros de COVID-19 tivessem aumento. Isso não é possivel identificar com base apenas nos gráficos apresentados nessa figura.
 
-Após a realização da analise dos dados em uma visão de todo Brasil, foi realizada a analise dos dados mês a mês por estado.
+Após realizada todas as analises apresentadas, foi definido a utilização de teste de hipoteses para verificar se a variação ocorrida em 2020 nos dados de quimioterapia e de radioterapia tem relação com os dados da COVID-19. Desta forma foi definido como hipotese nula que a variação de 2020 não tem relação com os dados da COVID-19. Para validar as hipoteses foi utilizada o teste de qui-quadrado.
 
 ## Analise dos Dados por Estado
 
