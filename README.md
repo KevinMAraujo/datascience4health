@@ -282,35 +282,30 @@ As mesmas analises realizadas com os dados de quimioterapia foram realizadas nos
 
 ![Figura 30](./assets/images/Fig30.png)
 
-A partir da figura acima foi possivel visualizar a variação do número de registros nos anos 2019 e 2020. No mês de fevereiro do ano de 2019 não houve nenhum registros de radioterapia, porém não foi possível identificação nenhum documentação que justificasse ou que explicasse o que pode ter ocorrido nesse mês. Pode ter havido uma troca na forma de coleta dos dados, mas isso não foi possivel afimar com base nos documentos encontrados no site do Datasus. É possivel notar que os meses de janeiro até abril de 2019 houve um número muito pequeno de registros, isso reforça a hipoteses que houve uma troca na forma de coletada dados nos primeiros meses de 2019.
-
-Em nennhum dos anos foi possivel identificar nenhum padrão no número de casos, porém é possivel notar que houve um aumento no numero de registros no ano de 2019 para o ano de 2020. A figura abaixo apresenta os números de registros de radioterapia em cada ano.
+A partir da figura acima é possível visualizar a variação do número de registros nos anos 2019 e 2020. No mês de fevereiro do ano de 2019 não houve nenhum registro de radioterapia, porém não foi possível identificar nenhum documento que justificasse ou que explicasse o que pode ter ocorrido nesse mês. Pode ter havido uma troca na forma de coleta dos dados, mas isso não é possível afirmar com base nos documentos encontrados no site do Datasus. Podemos notar que os meses de janeiro até abril de 2019 houve um número muito pequeno de registros, isso reforça a hipóteses que houve uma troca na forma de coletada dados nos primeiros meses de 2019. O ano de 2019 teve uma média de 610 registros por mês, e o ano de 2020 teve uma média de 926 registros por mês.
+Realizando a analise anual dos dados foi gerado a figura abaixa, que apresenta os números de registros de radioterapia em cada ano.
 
 ![Figura 31](./assets/images/Fig31.png)
 
-Com base do gráfico da figura acima é possivel visualizar que houve uma alteração consideravel na quantidade de registros do ano, porém temos que levar em consideração os meses de janeiro a abril de 2019 que não tiveram muitos registros. Partindo desse ponto, a figura abaixo apresenta os dados apenas dos meses de maio a dezembro dos anos de 2019 e 2020.
+Com base do gráfico da figura acima é possível visualizar que houve um aumento considerável na quantidade de registros do ano de 2020 em relação ao ano de 2019, onde o ano de 2019 teve 7.320 registros e o ano de 2020 teve 11.118 registros. Porém temos que levar em consideração os meses de janeiro a abril de 2019 que não tiveram um número muito baixo de registros. Partindo desse ponto, a figura abaixo apresenta os dados apenas dos meses de maio a dezembro dos anos de 2019 e 2020.
 
 ![Figura 32](./assets/images/Fig32.png)
 
-Removendo os meses de janeiro a abril dos anos de 2019 e 2020 é possivel notar que o número de registros de radioterapia é bem semelhante entre os dois anos. Sem os anos meses de janeiro a abril o ano de 2020 7.420 registros, já o ano de 2019 teve 7.295 registros. O ano de 2020 apresentou um valor um pouco maior que o ano anterior, mas não muito acima.
+Removendo os meses de janeiro a abril dos anos de 2019 e 2020 é possível notar que o número de registros de radioterapia é bem semelhante entre os dois anos. Sem os anos meses de janeiro a abril o ano de 2020 7.420 registros, já o ano de 2019 teve 7.295 registros. O ano de 2020 apresentou um valor um pouco maior que o ano anterior, mas não muito acima. 
 
-Com base nos dados obtidos até o momento foi iniciado a analise dos dados do número de casos de COVID-19 em 2020. Os primeiros registros de COVID-19 no Brasil começaram a ser identificados em fevereiro de 2020. A figura abaixo apresenta a variação do número de casos mês a mês no ano de 2020.
+Com a conclusão das análises dos dados de quimioterapia e de radioterapia iniciamos a análise dos dados da COVID-19 no ano de 2020. Os primeiros registros de COVID-19 no Brasil começaram a ser identificados em fevereiro de 2020. A figura abaixo apresenta a variação do número de casos mês a mês no ano de 2020.
 
 ![Figura 33](./assets/images/Fig33.png)
 
-Na figura é possivel visualizar a variação dos casos de COVID-19 em 2020, não foi possivel identificar um padrão nos dados apenas com esse gráfico, mas é possivel visualizar que os meses de julho e dezembro tiveram uma alta significativa no número de casos de COVID-19 em relação aos meses anteriores.
+Na figura é possível visualizar a variação dos casos de COVID-19 em 2020. O ano de 2020 teve 7.675.973 casos de COVID-19 registrados, uma média de 639.664 casos por mês. Com base no gráfico apresentado na figura é possível visualizar que os meses de julho e dezembro tiveram uma alta significativa no número de casos de COVID-19 em relação aos meses anteriores.
 
-O objetivo do projeto é identificar se os casos de COVID-19 no ano de 2020 influenciaram o numero de registros de quimioterapia e de radioterapia, e na busca de encontrar padrões visiveis de variações nos dados coletados entre si no ano de 2020 foi gerado a figura abaixo.
+O objetivo do projeto é identificar se os casos de COVID-19 no ano de 2020 influenciaram o número de registros de quimioterapia e de radioterapia, e buscar padrões variações nos dados coletados. Buscando facilitar a visualização dos dados já apresentados do ano de 2020 foi criada a figura abaixo.
 
 ![Figura 34](./assets/images/Fig34.png)
 
-A figura acima apresenta os número de registros mês a mês de cada um dos grupos analisados no ano de 2020. O objetivo era verificar ser seria possível identificar uma variação no número de registros no ano de 2020 nos dados de quimioterapia e de radioterapia nos meses onde os registros de COVID-19 tivessem aumento. Isso não é possivel identificar com base apenas nos gráficos apresentados nessa figura.
+A figura acima apresenta o número de registros mês a mês de cada um dos grupos analisados no ano de 2020. O objetivo da figura é facilitar a visualização e comparação dos números de registros mês a mês de cada um dos grupos de dados analisados.  
+Após realizada as análises apresentadas foi realizado a utilização de teste de hipóteses para verificar se a variação ocorrida em 2020 nos dados de quimioterapia e de radioterapia tem relação com os dados da COVID-19. Aplicamos o teste de hipótese qui-quadrado com as seguintes hipóteses: H0: 2016 = 2017 = 2018 = 2019 = 2020 H1: 2016 ≠ 2017 ≠ 2018 ≠ 2019 ≠ 2020. Adotamos P < 0.05. Para realização do cálculo do qui-quadrado foi utilizado o
 
-Após realizada todas as analises apresentadas, foi definido a utilização de teste de hipoteses para verificar se a variação ocorrida em 2020 nos dados de quimioterapia e de radioterapia tem relação com os dados da COVID-19. Desta forma foi definido como hipotese nula que a variação de 2020 não tem relação com os dados da COVID-19. Para validar as hipoteses foi utilizada o teste de qui-quadrado.
-
-## Analise dos Dados por Estado
-
-O objetivo dessa analise é tentar identificar se houveram variações significativos dos números de registros em cada um dos estados do pais.
 
 
 
