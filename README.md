@@ -200,6 +200,7 @@ Esta mesma impressão foi obtida na análise global de procedimentos por mês e 
 
 
 ***APAC - radioterapia***
+
 A base de dados da APAC radioterapia possui 72 variáveis, definidas e explicadas na mesma documentação do SIASUS mencionada anteriormente para APAC quimioterapia. Dentre estas variáveis, selecionamos 10, descritas a seguir.
 
 As variáveis AP_GESTAO e AP_UFMUN fornecem a localização do estabelecimento em que o serviço foi oferecido, e foram selecionadas a fim de nos permitir diferenciar os dados de cada estado, uma vez que o objetivo do projeto inclui avaliar estados e/ou regiões separadamente, além da visão geral do país.
@@ -218,7 +219,7 @@ A variável AP_TPAPAC indica se a APAC é inicial, de continuidade ou única. Es
 
 As demais variáveis não foram selecionadas pois não seriam relevantes dentro do objetivo do projeto. Desta forma, não foram incluídas variáveis como o número e valor da APAC, e variáveis relacionadas a dados do estabelecimento que realizou o procedimento, dados sociodemográficos e endereço do paciente.
 
-As variáveis não selecionadas foram excluídas e o filtros foram aplicados a fim de selecionar a população de interesse do projeto: sexo feminino, ⩾ 60 anos, e código de procedimento de radioterapia de mama (304010413). Os resultados obtidos com os filtros corresponderam a 7% do banco de dados. No entanto, nas primeiras análises verificamos que não haviam registros para anos anteriores a 2019, conforme é possível visualizar na figura 20 (⩾ 60 anos, sexo feminino, por ano).
+As variáveis não selecionadas foram excluídas e o filtros foram aplicados a fim de selecionar a população de interesse do projeto: sexo feminino, ⩾ 60 anos, e código de procedimento de radioterapia de mama (304010413). Os resultados obtidos com os filtros corresponderam a 7% do banco de dados. No entanto, já nas primeiras análises verificamos que não haviam registros para anos anteriores a 2019, conforme é possível visualizar na figura abaixo (⩾ 60 anos, sexo feminino, por ano). 
 
 ![Figura 20](./assets/images/Fig20.png)
 
