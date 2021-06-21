@@ -221,7 +221,7 @@ As demais variáveis não foram selecionadas pois não seriam relevantes dentro 
 
 As variáveis não selecionadas foram excluídas e o filtros foram aplicados a fim de selecionar a população de interesse do projeto: sexo feminino, ⩾ 60 anos, e código de procedimento de radioterapia de mama (304010413). Os resultados obtidos com os filtros corresponderam a 7% do banco de dados. No entanto, já nas primeiras análises verificamos que não haviam registros para anos anteriores a 2019, conforme é possível visualizar na figura abaixo (⩾ 60 anos, sexo feminino, por ano). 
 
-![Figura 20](./assets/images/Fig20.png)
+![Figura 20](./assets/images/Fig20a.png)
 
 Procuramos entender esta ausência de dados e verificamos que em 2019 foi publicada a Portaria nº 263/2019, que atualiza a tabela de procedimentos radioterápicos do SUS e cria o código de radioterapia de mama utilizado. Uma alternativa para contornar esta ausência seria aplicar o filtro na variável AP_CIDPRI utilizando o CID 50 em substituição ao código do procedimento, no entanto, esse filtro não permitiria diferenciar o câncer metastático do não metastático já que o CID 50 é válido para ambos. Como a pergunta de pesquisa inicial incluiu apenas pacientes com câncer não metastático, a fim de respondê-la trabalhamos somente com os dados de 2019 e 2020.
 
