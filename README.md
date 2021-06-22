@@ -11,7 +11,7 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 | Annemeri Livinalli | 226976 | Saúde |
 | Kevin Martins Araújo | 223971 | Computação |
 | Luísa von Zuben Veçoso | 156457 | Saúde |
-| Rafael Duarte Paes | 224242 | Saúde |
+
 
 # Descrição Resumida do Projeto
 A COVID-19, doença causada pelo vírus SARS-CoV-2, emergiu na China no final de 2019. Com o número crescente de casos avançando globalmente, em março de 2020 a Organização Mundial de Saúde reconheceu a pandemia [1] e instituiu medidas preventivas contra a disseminação, incluindo distanciamento associado à medidas de higiene [2]. A doença, transmitida por via respiratória [3],  causou até abril de 2021, mais de 2,9 milhões de óbitos em todo o mundo [4] e mais de 340 mil no Brasil [5]. 
@@ -37,8 +37,8 @@ O número de casos acumulados de Covid-19 por região foi obtido na plataforma [
 Em relação ao câncer, consideramos as seguintes variáveis categóricas: localização geográfica (região de tratamento), tipo de tratamento; e numéricas: idade. Em relação à Covid-19 consideramos as mesmas variáveis, exceto o tipo de tratamento.
 
 A frequência de cada conjunto de procedimentos (quimioterapia e radioterapia) está descrita como média, por ano e região. Considerando que as variáveis assumirão uma distribuição normal, afim de comparar as proporções e distribuições dos procedimentos entre cada ano, aplicamos o teste de hipótese qui-quadrado com as seguintes hipóteses:
-H0: 2016 = 2017 = 2018 = 2019 = 2020
-H1: 2016 ≠ 2017 ≠ 2018 ≠ 2019 ≠ 2020
+H0: não há diferença estatística entre os anos analisados
+H1: há diferença
 
 Adotamos P < 0.05.
 
