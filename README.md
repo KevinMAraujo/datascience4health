@@ -14,7 +14,7 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 
 # Descrição Resumida do Projeto
-A COVID-19, doença causada pelo vírus SARS-CoV-2, emergiu na China no final de 2019. Com o número crescente de casos avançando globalmente, em março de 2020 a Organização Mundial de Saúde reconheceu a pandemia [1] e instituiu medidas preventivas contra a disseminação, incluindo distanciamento associado à medidas de higiene [2]. A doença, transmitida por via respiratória [3],  causou até abril de 2021, mais de 2,9 milhões de óbitos em todo o mundo [4] e mais de 340 mil no Brasil [5]. 
+A COVID-19, doença causada pelo vírus SARS-CoV-2, emergiu na China no final de 2019. Com o número crescente de casos avançando globalmente, em março de 2020 a Organização Mundial de Saúde reconheceu a pandemia [1] e instituiu medidas preventivas contra a disseminação, incluindo distanciamento associado à medidas de higiene [2]. A doença, transmitida por via respiratória [3],  causou até abril de 2021, mais de 3,8 milhões de óbitos em todo o mundo [4] e mais de 500 mil no Brasil [5]. 
 Dentre os diversos impactos da pandemia observados globalmente, o medo da COVID-19 resultou em uma redução na demanda por atendimento médico em situações consideradas não urgentes, incluindo exames diagnósticos de câncer e o próprio tratamento, incluindo quimioterapia, radioterapia ou cirurgia [6]. No Brasil, os diagnósticos de câncer reduziram de 24,3% (região Norte) a 42,7% (região Nordeste), com média de 35,5% no país, correspondentes a 15 mil casos não diagnosticados por mês no período de janeiro a agosto de 2020 [7]. O tratamento dos pacientes com câncer também reduziu em alguns países, tornando-se uma preocupação desde o início da pandemia [6]. 
 
 Neste contexto, buscamos por dados que apontassem  o impacto da pandemia no tratamento de mulheres com idade igual ou superior a 60 anos com câncer de mama no Brasil. Fizemos a comparação do número de procedimentos relacionados aos tratamentos (quimioterapia e radioterapia) realizados durante a pandemia em 2020 com a quantidade realizada no mesmo período em anos anteriores.
@@ -366,9 +366,9 @@ Uma maior experiência com os bancos de dados gerados no DATASUS nos permitiria,
 
 [3] Kamps BS, Hoffmann C. Covid reference. Steinhauser Verlag, 2021. 6ed. Acesso em 09/04/2021. Disponível em: www.covidreference.com
 
-[4] World Health Organization. WHO Coronavirus dashboard. Acesso em 09/04/2021. Disponível: https://covid19.who.int/
+[4] World Health Organization. WHO Coronavirus dashboard. Acesso em 23/06/2021. Disponível: https://covid19.who.int/
 
-[5] CoronavirusBrasil. Painel Covid-19. Acesso em 09/04/2021. disponível em: https://covid.saude.gov.br/
+[5] CoronavirusBrasil. Painel Covid-19. Acesso em 23/06/2021. disponível em: https://covid.saude.gov.br/
 
 [6] Jindal V, Sahu KK, Gaikazian S, Siddiqui AD, Jaiyesimi I. Cancer treatment during Covid-19 pandemic. Medical Onc 2020; 37: 58.
 
