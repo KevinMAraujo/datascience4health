@@ -19,8 +19,21 @@ Dentre os diversos impactos da pandemia observados globalmente, o medo da COVID-
 
 Neste contexto, buscamos por dados que apontassem  o impacto da pandemia no tratamento de mulheres com idade igual ou superior a 60 anos com câncer de mama no Brasil. Fizemos a comparação do número de procedimentos relacionados aos tratamentos (quimioterapia e radioterapia) realizados durante a pandemia em 2020 com a quantidade realizada no mesmo período em anos anteriores.
 
-Link para vídeo de apresentação da proposta do projeto: https://drive.google.com/file/d/1w6-9AbcpNAfgPTRWBStaWuJMb-mndVEQ/view?usp=sharing 
+# Vídeos do Projeto
 
+## Vídeo da Proposta
+> Link para vídeo de apresentação da proposta do projeto: https://drive.google.com/file/d/1w6-9AbcpNAfgPTRWBStaWuJMb-mndVEQ/view?usp=sharing 
+
+## Vídeo da Apresentação Final
+> Link para vídeo da apresentação final do projeto (máximo 8 minutos). *TODOS OS MEMBROS DO GRUPO DEVEM APARECER NO VÍDEO*.
+
+# Slides do Projeto
+
+## Slides da Proposta
+> Link para slides de apresentação da proposta do projeto.
+
+## Slides da Apresentação Final
+> Link para slides da apresentação final do projeto.
 # Pergunta de Pesquisa
 Qual o impacto da pandemia de Covid-19 no tratamento do câncer de mama não metastático, em mulheres acima dos 60 anos, atendidas no Sistema Único de Saúde (SUS).
 
