@@ -25,15 +25,14 @@ Neste contexto, buscamos por dados que apontassem  o impacto da pandemia no trat
 > Link para vídeo de apresentação da proposta do projeto: https://drive.google.com/file/d/1w6-9AbcpNAfgPTRWBStaWuJMb-mndVEQ/view?usp=sharing 
 
 ## Vídeo da Apresentação Final
-> Link para vídeo da apresentação final do projeto (máximo 8 minutos). *TODOS OS MEMBROS DO GRUPO DEVEM APARECER NO VÍDEO*.
+> Link para vídeo da apresentação final do projeto: https://drive.google.com/file/d/1oczbhZKQ0kakQxgea2KnVZREw-4cl6qK/view?usp=sharing
 
 # Slides do Projeto
 
-## Slides da Proposta
-> Link para slides de apresentação da proposta do projeto.
-
 ## Slides da Apresentação Final
-> Link para slides da apresentação final do projeto.
+> Link para slides da apresentação final do projeto: https://docs.google.com/presentation/d/1dvfuIbaygkRpx5N9x8qIs53iILC6O0KgpjHAAfBBXlk/edit#slide=id.gb6ee07971f_0_942
+
+
 # Pergunta de Pesquisa
 Qual o impacto da pandemia de Covid-19 no tratamento do câncer de mama não metastático, em mulheres acima dos 60 anos, atendidas no Sistema Único de Saúde (SUS).
 
