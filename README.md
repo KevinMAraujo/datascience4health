@@ -22,15 +22,15 @@ Neste contexto, buscamos por dados que apontassem  o impacto da pandemia no trat
 # Vídeos do Projeto
 
 ## Vídeo da Proposta
-> Link para vídeo de apresentação da proposta do projeto: https://drive.google.com/file/d/1w6-9AbcpNAfgPTRWBStaWuJMb-mndVEQ/view?usp=sharing 
+> https://drive.google.com/file/d/1w6-9AbcpNAfgPTRWBStaWuJMb-mndVEQ/view?usp=sharing 
 
 ## Vídeo da Apresentação Final
-> Link para vídeo da apresentação final do projeto: https://drive.google.com/file/d/1oczbhZKQ0kakQxgea2KnVZREw-4cl6qK/view?usp=sharing
+> https://drive.google.com/file/d/1oczbhZKQ0kakQxgea2KnVZREw-4cl6qK/view?usp=sharing
 
 # Slides do Projeto
 
 ## Slides da Apresentação Final
-> Link para slides da apresentação final do projeto: https://docs.google.com/presentation/d/1dvfuIbaygkRpx5N9x8qIs53iILC6O0KgpjHAAfBBXlk/edit#slide=id.gb6ee07971f_0_942
+> https://docs.google.com/presentation/d/1dvfuIbaygkRpx5N9x8qIs53iILC6O0KgpjHAAfBBXlk/edit#slide=id.gb6ee07971f_0_942
 
 
 # Pergunta de Pesquisa
